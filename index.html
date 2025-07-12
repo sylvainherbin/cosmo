@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sylvain Herbin | Fractal Cosmology Research</title>
+    
+    <!-- MathJax -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Source+Sans+Pro:wght@300;400;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- Variables and Reset --- */
+        :root {
+            --primary: #1a2639;
+            --secondary: #3e6d9c;
+            --accent: #e74c3c;
+            --light: #f5f7fa;
+            --dark: #0d1b2a;
+            --gold: #d4af37;
+            --gold-light: #e6c567;
+            --gray-light: #eef2f6;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+            padding-top: 100px;
+            overflow-x: hidden;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        /* --- Fixed Header --- */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: linear-gradient(135deg, var(--primary), #14213d);
+            color: white;
+            padding: 15px 5%;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.4s ease;
+        }
+
+        header.scrolled {
+            padding: 10px 5%;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .site-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.6rem;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .site-title i {
+            margin-right: 10px;
+            color: var(--gold);
+        }
+
+        .site-title:hover {
+            text-decoration: none;
+            opacity: 0.9;
+        }
+
+        .main-nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-link {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            padding: 8px 15px;
+            border-radius: 30px;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(5px);
+        }
+
+        .nav-link:hover {
+            color: white;
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
+
+        .nav-link.active {
+            background: var(--gold);
+            color: var(--primary);
+        }
+
+        .nav-link i {
+            margin-right: 8px;
+            font-size: 1.1rem;
+        }
+
+        /* --- Main Content --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 5%;
+        }
+
+        .hero-section {
+            text-align: center;
+            margin-bottom: 70px;
+            padding: 60px 0;
+            position: relative;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary);
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 30px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .hero-title::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 4px;
+            background: linear-gradient(to right, var(--gold), var(--accent));
+            border-radius: 2px;
+        }
+
+        .hero-subtitle {
+            color: var(--secondary);
+            font-size: 1.7rem;
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.5;
+            font-weight: 400;
+        }
+
+        .hero-divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--gold), transparent);
+            width: 60%;
+            margin: 40px auto;
+            opacity: 0.3;
+        }
+
+        .research-card {
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            margin-bottom: 50px;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            border-top: 5px solid var(--gold);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .research-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--gold), var(--accent));
+        }
+
+        .research-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+        }
+
+        .card-title {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary);
+            font-size: 2rem;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding-left: 40px;
+        }
+
+        .card-title::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 30px;
+            height: 3px;
+            background: var(--gold);
+        }
+
+        .math-container {
+            background: linear-gradient(to right, rgba(62, 109, 156, 0.03), rgba(212, 175, 55, 0.08));
+            padding: 30px;
+            border-radius: 12px;
+            margin: 30px 0;
+            font-style: italic;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            border-left: 4px solid var(--gold);
+            position: relative;
+            overflow-x: auto;
+        }
+
+        .math-container p {
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .doi-badge {
+            display: inline-block;
+            background: var(--secondary);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-size: 1rem;
+            margin-top: 25px;
+            transition: all 0.3s;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(62, 109, 156, 0.3);
+        }
+
+        .doi-badge:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(62, 109, 156, 0.4);
+        }
+
+        .doi-badge i {
+            margin-right: 8px;
+        }
+
+        .key-features {
+            padding-left: 30px;
+            margin: 30px 0;
+        }
+
+        .key-features li {
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            position: relative;
+            padding-left: 35px;
+            line-height: 1.7;
+        }
+
+        .key-features li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 18px;
+            height: 18px;
+            background: var(--gold);
+            border-radius: 50%;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 14px;
+            padding: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            border: 1px solid rgba(0,0,0,0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--gold), var(--accent));
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+        }
+
+        .feature-title {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            padding-left: 10px;
+        }
+
+        .feature-title i {
+            color: var(--gold);
+            margin-right: 12px;
+            font-size: 1.4rem;
+        }
+
+        .feature-content {
+            font-size: 1.15rem;
+            padding-left: 10px;
+        }
+
+        /* --- Social Icons --- */
+        .social-container {
+            display: flex;
+            justify-content: center;
+            gap: 35px;
+            margin: 60px 0 40px;
+        }
+
+        .social-link {
+            color: var(--primary);
+            font-size: 2.8rem;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: white;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .social-link::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--gold), var(--accent));
+            opacity: 0;
+            transition: opacity 0.3s;
+            z-index: 1;
+        }
+
+        .social-link i {
+            position: relative;
+            z-index: 2;
+        }
+
+        .social-link:hover {
+            color: white;
+            transform: scale(1.15) rotate(5deg);
+        }
+
+        .social-link:hover::before {
+            opacity: 1;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background: linear-gradient(135deg, var(--primary), #0d1b2a);
+            color: white;
+            text-align: center;
+            padding: 50px 5% 30px;
+            margin-top: 50px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .copyright {
+            margin-top: 30px;
+            font-size: 1.1rem;
+            opacity: 0.8;
+        }
+
+        .research-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .footer-btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: all 0.4s ease;
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            min-width: 220px;
+            justify-content: center;
+        }
+
+        .footer-btn:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .footer-btn i {
+            margin-right: 10px;
+            font-size: 1.3rem;
+        }
+
+        .doi-link {
+            background: linear-gradient(135deg, var(--gold), #c19b30);
+        }
+
+        .doi-link:hover {
+            background: linear-gradient(135deg, var(--gold-light), var(--gold));
+        }
+
+        /* --- Responsive --- */
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 2.8rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.4rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding-top: 140px;
+            }
+            
+            header {
+                flex-direction: column;
+                padding: 15px;
+            }
+            
+            .site-title {
+                margin-bottom: 15px;
+                font-size: 1.4rem;
+            }
+            
+            .main-nav {
+                width: 100%;
+                justify-content: center;
+                gap: 10px;
+                flex-wrap: wrap;
+            }
+            
+            .nav-link {
+                font-size: 0.9rem;
+                padding: 6px 12px;
+            }
+            
+            .container {
+                padding: 20px;
+            }
+            
+            .hero-title {
+                font-size: 2.2rem;
+                padding-bottom: 20px;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .research-card {
+                padding: 25px;
+            }
+            
+            .social-link {
+                font-size: 2.2rem;
+                width: 65px;
+                height: 65px;
+            }
+            
+            .footer-btn {
+                min-width: 200px;
+                font-size: 1rem;
+                padding: 10px 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 1.9rem;
+            }
+            
+            .card-title {
+                font-size: 1.6rem;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Fixed Header -->
+    <header>
+        <a href="#" class="site-title"><i class="fas fa-atom"></i>Sylvain Herbin</a>
+        <nav class="main-nav">
+            <a href="#prl" class="nav-link active"><i class="fas fa-file-alt"></i> PRL Version</a>
+            <a href="arxiv/" class="nav-link"><i class="ai ai-arxiv"></i> arXiv Abstract</a>
+            <a href="explainer/" class="nav-link"><i class="fas fa-microscope"></i> Science Explainers</a>
+            <a href="#" class="nav-link"><i class="fas fa-home"></i> Home</a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div class="hero-section">
+            <h1 class="hero-title">Fractal Cosmology</h1>
+            <div class="hero-subtitle">A novel paradigm unifying quantum gravity and cosmic structure</div>
+            <div class="hero-divider"></div>
+        </div>
+        
+        <div class="research-card" id="prl">
+            <h2 class="card-title">Research Abstract</h2>
+            <div class="math-container">
+                <p>This research introduces an innovative fractal cosmological model based on non-commutative geometry at Planck scales. The genesis operator \(\mathcal{O}\) generates Fibonacci sequences that structure a hierarchy of multiverses \(\mathcal{U}_n\) through temporal singularities converging to the golden ratio \(\phi \approx 1.618\).</p>
+                
+                <p>The framework resolves fundamental cosmological problems, including the horizon problem, through inherent scale invariance and provides testable predictions for cosmic microwave background (CMB) observations. Key mathematical relationships include:</p>
+                
+                <p>\[ \mathcal{L}_n = \sqrt{-g} \left( \frac{R}{16\pi G} + \phi \langle \psi_n | \mathcal{O} | \psi_n \rangle \right) \]</p>
+                
+                <p>\[ \dim_{\mathscr{F}}(\mathcal{U}_n) \approx \phi \]</p>
+                
+                <p>This model offers a unified description of quantum mechanics and general relativity through the lens of fractal geometry.</p>
+                
+                <!-- DOI Badge -->
+                <a href="https://doi.org/10.5281/zenodo.15863407" class="doi-badge" target="_blank">
+                    <i class="ai ai-doi"></i> DOI: 10.5281/zenodo.15863407
+                </a>
+            </div>
+        </div>
+
+        <div class="research-card">
+            <h2 class="card-title">Key Features</h2>
+            <ul class="key-features">
+                <li><strong>Non-commutative geometry</strong> at Planck scales providing a quantum description of spacetime</li>
+                <li><strong>Fractal dimension</strong> \(D = \frac{\ln\phi}{\ln 2}\) governing cosmic structure formation</li>
+                <li><strong>Resolution of horizon problem</strong> through inherent scale invariance in the fractal geometry</li>
+                <li><strong>Observer-dependent quantum gravity</strong> where measurement defines spacetime geometry</li>
+                <li><strong>Golden ratio stability</strong> \(\delta \phi \sim 10^{-5}\) as a fundamental cosmological constant</li>
+            </ul>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3 class="feature-title"><i class="fas fa-calculator"></i> Mathematical Foundation</h3>
+                    <div class="feature-content">
+                        <p>The model is built on a mathematical framework combining Fibonacci sequences with quantum operators:</p>
+                        <p>\[ \mathcal{O}(0) = 1, \quad \mathcal{O}(1) = -1 \]</p>
+                        <p>\[ F_n = F_{n-1} + F_{n-2} \]</p>
+                    </div>
+                </div>
+                
+                <div class="feature-card">
+                    <h3 class="feature-title"><i class="fas fa-atom"></i> Quantum Gravity</h3>
+                    <div class="feature-content">
+                        <p>Integration of quantum mechanics with general relativity through a fractal approach:</p>
+                        <p>\[ \phi \langle \psi_n | \mathcal{O} | \psi_n \rangle \]</p>
+                        <p>where \(\psi_n\) represents quantum states at different fractal scales.</p>
+                    </div>
+                </div>
+                
+                <div class="feature-card">
+                    <h3 class="feature-title"><i class="fas fa-globe-americas"></i> Multiverse Structure</h3>
+                    <div class="feature-content">
+                        <p>Hierarchical organization of multiverses governed by fractal geometry:</p>
+                        <p>\[ \mathcal{U}_n = f_n(S_p, F_n) \]</p>
+                        <p>Each universe \(\mathcal{U}_n\) possesses a fractal dimension approximating \(\phi\).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Social Icons -->
+        <div class="social-container">
+            <a href="https://orcid.org/0009-0001-3390-5012" class="social-link" title="ORCID">
+                <i class="fab fa-orcid"></i>
+            </a>
+            <a href="https://doi.org/10.5281/zenodo.15863407" class="social-link" title="Zenodo">
+                <i class="ai ai-zenodo"></i>
+            </a>
+            <a href="https://x.com/sylvainherbin2b" class="social-link" title="Twitter">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="mailto:herbinsylvain@protonmail.com" class="social-link" title="Email">
+                <i class="fas fa-envelope"></i>
+            </a>
+            <a href="https://github.com/sylvainherbin" class="social-link" title="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="research-links">
+                <a href="#prl" class="footer-btn"><i class="fas fa-file-alt"></i> PRL Technical</a>
+                <a href="arxiv/" class="footer-btn"><i class="ai ai-arxiv"></i> arXiv Abstract</a>
+                <a href="explainer/" class="footer-btn"><i class="fas fa-microscope"></i> Science Explainers</a>
+                <a href="https://doi.org/10.5281/zenodo.15863407" class="footer-btn doi-link" target="_blank">
+                    <i class="ai ai-doi"></i> View on Zenodo
+                </a>
+            </div>
+            <p class="copyright">&copy; <script>document.write(new Date().getFullYear())</script> Sylvain Herbin | Fractal Cosmology Research</p>
+        </div>
+    </footer>
+
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

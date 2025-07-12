@@ -42,7 +42,7 @@
             line-height: 1.6;
             color: var(--dark);
             background-color: var(--light);
-            padding-top: 70px; /* Espace pour le header fixe */
+            padding-top: 120px; /* AUGMENTÉ À 120px */
             overflow-x: hidden;
         }
 
@@ -162,6 +162,10 @@
 
         /* --- Responsive --- */
         @media (max-width: 768px) {
+            body {
+                padding-top: 160px; /* AUGMENTÉ POUR MOBILE */
+            }
+            
             header {
                 flex-direction: column;
                 text-align: center;

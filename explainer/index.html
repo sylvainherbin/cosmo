@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Science Explainers | Fractal Cosmology - Sylvain Herbin</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- MathJax -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <style>
+        :root {
+            --primary: #1a2639;
+            --secondary: #3e6d9c;
+            --accent: #e74c3c;
+            --light: #f5f7fa;
+            --dark: #0d1b2a;
+            --gold: #d4af37;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            line-height: 1.8;
+            color: var(--dark);
+            background-color: var(--light);
+            overflow-x: hidden;
+            padding-top: 120px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Fixed Header */
+        .header-container {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: linear-gradient(135deg, var(--primary), #14213d);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+        }
+
+        .site-title {
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.8rem;
+            letter-spacing: 0.5px;
+            text-decoration: none;
+        }
+
+        .site-title:hover {
+            text-decoration: underline;
+        }
+
+        /* Main Navigation */
+        .main-nav {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            padding: 0.5rem 0;
+            position: relative;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .nav-link:hover {
+            color: white;
+        }
+
+        .nav-link::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-link.active {
+            color: white;
+        }
+
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 3rem 0;
+        }
+
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary);
+            font-size: 2.8rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            padding-top: 10px;
+        }
+
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 4px;
+            background: linear-gradient(to right, var(--gold), var(--accent));
+        }
+
+        .explainer-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            padding: 3rem;
+            margin: 0 auto 3rem;
+            border-left: 5px solid var(--gold);
+        }
+
+        .abstract-box {
+            background: rgba(62, 109, 156, 0.08);
+            border-left: 4px solid var(--secondary);
+            padding: 1.8rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+            font-style: italic;
+        }
+
+        .concept-box {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 2.5rem 0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            border-top: 3px solid var(--secondary);
+            transition: transform 0.3s ease;
+        }
+
+        .concept-box:hover {
+            transform: translateY(-5px);
+        }
+
+        .concept-title {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .concept-title i {
+            margin-right: 12px;
+            color: var(--gold);
+            font-size: 1.5rem;
+        }
+
+        /* FIXED: Math container with horizontal scroll */
+        .math-container {
+            background: rgba(212, 175, 55, 0.08);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.8rem 0;
+            font-size: 1.1rem;
+            text-align: center;
+            border: 1px dashed rgba(212, 175, 55, 0.3);
+            overflow-x: auto;
+        }
+
+        .math-container .MathJax {
+            padding: 0 10px;
+        }
+
+        .fractal-visual {
+            display: flex;
+            justify-content: center;
+            margin: 2.5rem 0;
+        }
+
+        .fractal {
+            position: relative;
+            width: 300px;
+            height: 300px;
+        }
+
+        .fractal-base {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: rgba(62, 109, 156, 0.2);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .fractal-child {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: rgba(62, 109, 156, 0.3);
+            border-radius: 50%;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2.5rem 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .comparison-table th, .comparison-table td {
+            padding: 15px;
+            text-align: center;
+            border: 1px solid #e0e0e0;
+        }
+
+        .comparison-table th {
+            background: var(--primary);
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .prediction-list {
+            padding-left: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .prediction-list li {
+            margin-bottom: 1rem;
+            padding-left: 1rem;
+            position: relative;
+        }
+
+        .prediction-list li::before {
+            content: "•";
+            color: var(--gold);
+            font-size: 1.5rem;
+            position: absolute;
+            left: -1rem;
+            top: -0.4rem;
+        }
+
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin: 3rem 0;
+            flex-wrap: wrap;
+        }
+
+        .action-btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 14px 35px;
+            border-radius: 50px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .primary-btn {
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            color: white;
+        }
+
+        .primary-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(62, 109, 156, 0.3);
+        }
+
+        .secondary-btn {
+            background: white;
+            color: var(--primary);
+            border: 2px solid var(--secondary);
+        }
+
+        .secondary-btn:hover {
+            background: #f0f7ff;
+            transform: translateY(-3px);
+            border-color: var(--secondary);
+        }
+
+        .home-btn {
+            background: linear-gradient(135deg, var(--gold), #c19b30);
+            color: white;
+        }
+
+        .home-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, var(--primary), #0d1b2a);
+            color: white;
+            text-align: center;
+            padding: 2.5rem;
+            margin-top: 60px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            body {
+                padding-top: 160px;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                padding: 1rem;
+            }
+            
+            .site-title {
+                margin-bottom: 1rem;
+                font-size: 1.5rem;
+            }
+            
+            .main-nav {
+                margin-top: 1rem;
+                gap: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .explainer-card {
+                padding: 1.8rem;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+                gap: 15px;
+                align-items: center;
+            }
+            
+            .action-btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+            
+            .comparison-table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .concept-title {
+                font-size: 1.5rem;
+            }
+
+            /* Better equation handling on mobile */
+            .math-container {
+                padding: 1rem 0.5rem;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Fixed Header -->
+    <header class="header-container">
+        <div class="header-content">
+            <a href="../" class="site-title">Sylvain Herbin</a>
+            <nav class="main-nav">
+                <a href="../prl/" class="nav-link">PRL Version</a>
+                <a href="../arxiv/" class="nav-link">arXiv Abstract</a>
+                <a href="../explainer/" class="nav-link active">Science Explainers</a>
+                <!-- ADDED: Home button in navigation -->
+                <a href="../" class="nav-link">
+                    <i class="fas fa-home"></i> Home
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <h2 class="section-title">Fractal Cosmology Explained</h2>
+            
+            <div class="explainer-card">
+                <div class="abstract-box">
+                    <h3>In a Nutshell</h3>
+                    <p>This cosmological model uses a fractal structure based on the Fibonacci sequence to describe the universe. Unlike the standard model, it combines gravity, quantum mechanics, and the role of observers in a unified way. Starting from a point with no dimensions, the model grows into multiple universes through a special process, solving mysteries about the universe's expansion and structure.</p>
+                </div>
+                
+                <div class="concept-box">
+                    <h3 class="concept-title"><i class="fas fa-question-circle"></i> Why a New Model?</h3>
+                    <p>In cosmology, scientists face puzzles like disagreements about the Hubble constant or unusual patterns in the cosmic microwave background (CMB). The standard model, ΛCDM, struggles to explain these issues. Our fractal model offers a solution by combining gravity, quantum mechanics, and the Fibonacci sequence.</p>
+                </div>
+                
+                <div class="concept-box">
+                    <h3 class="concept-title"><i class="fas fa-seedling"></i> The Starting Point</h3>
+                    <p>The universe begins as a single point with no dimensions. The genesis operator (\(\mathcal{O}\)) starts a chain reaction, creating time and space:</p>
+                    
+                    <div class="math-container">
+                        \[ \mathcal{O}(0) = 1, \quad \mathcal{O}(1) = -1 \]
+                        \[ F_n = F_{n-1} + F_{n-2} \]
+                    </div>
+                    
+                    <p>Here, \(F_n\) is the Fibonacci sequence, where each number is the sum of the two before it. The operator flips between positive and negative values to start the universe's growth.</p>
+                </div>
+                
+                <div class="concept-box">
+                    <h3 class="concept-title"><i class="fas fa-calculator"></i> Fibonacci & Golden Ratio</h3>
+                    <p>The Fibonacci sequence is a series of numbers:</p>
+                    
+                    <div class="math-container">
+                        \[ F_0 = 0, \quad F_1 = 1, \quad F_n = F_{n-1} + F_{n-2} \]
+                    </div>
+                    
+                    <p>As the sequence grows, the ratio of consecutive numbers approaches the golden ratio:</p>
+                    
+                    <div class="math-container">
+                        \[ \phi = \lim_{n \to \infty} \frac{F_n}{F_{n-1}} \approx 1.618 \]
+                    </div>
+                    
+                    <p>This number, \(\phi\), shapes the universe's fractal structure—a pattern that repeats at different scales, like a snowflake.</p>
+                </div>
+                
+                <div class="concept-box">
+                    <h3 class="concept-title"><i class="fas fa-globe-americas"></i> Multiple Universes</h3>
+                    <p>The model suggests many universes, each following the Fibonacci pattern:</p>
+                    
+                    <div class="math-container">
+                        \[ \mathcal{U}_n = f_n(S_p, F_n) \]
+                        \[ \dim_{\mathscr{F}}(\mathcal{U}_n) \approx \phi \]
+                    </div>
+                    
+                    <p>Here, \(\mathcal{U}_n\) represents a universe, and its "dimension" is close to the golden ratio, making it fractal. These universes are connected, like layers in a cosmic onion.</p>
+                </div>
+                
+                <div class="concept-box">
+                    <h3 class="concept-title"><i class="fas fa-eye"></i> The Role of Observers</h3>
+                    <p>The model includes a mathematical rule that combines gravity and quantum mechanics:</p>
+                    
+                    <div class="math-container">
+                        \[ \mathcal{L}_n = \sqrt{-g} \left( \frac{R}{16\pi G} + \phi \langle \psi_n | \mathcal{O} | \psi_n \rangle \right) \]
+                    </div>
+                    
+                    <p>This equation describes how the universe's shape (gravity, \(R\)) and tiny particles (quantum mechanics, \(\psi_n\)) work together, guided by the genesis operator and the golden ratio. Observers help define the universe's structure.</p>
+                </div>
+                
+                <div class="concept-box">
+                    <h3 class="concept-title"><i class="fas fa-lightbulb"></i> Key Predictions</h3>
+                    <p>This model makes specific predictions that scientists can test:</p>
+                    
+                    <ul class="prediction-list">
+                        <li>The cosmic microwave background (CMB) should show patterns matching the golden ratio (\(\alpha \approx 1.618 \pm 0.1\))</li>
+                        <li>Galaxies should cluster following a related number (\(\gamma \approx 1.382 \pm 0.1\))</li>
+                        <li>The golden ratio should be extremely stable (\(\delta \phi \sim 10^{-5}\))</li>
+                    </ul>
+                    
+                    <p>These predictions will be tested with telescopes and experiments like CMB-S4 and Euclid in 2026-2027.</p>
+                </div>
+                
+                <div class="concept-box">
+                    <h3 class="concept-title"><i class="fas fa-balance-scale"></i> Model Comparison</h3>
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Model</th>
+                                <th>Error Score (χ²)</th>
+                                <th>p-value</th>
+                                <th>Improvement</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Standard Model (ΛCDM)</td>
+                                <td>142.0</td>
+                                <td>0.015</td>
+                                <td>Baseline</td>
+                            </tr>
+                            <tr>
+                                <td>Modified Gravity (f(R))</td>
+                                <td>138.5</td>
+                                <td>0.010</td>
+                                <td>+3%</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: 600;">Fractal Model</td>
+                                <td style="font-weight: 600;">120.5</td>
+                                <td style="font-weight: 600;">0.002</td>
+                                <td style="font-weight: 600; color: var(--accent);">+15%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p>The fractal model reduces errors by 15% compared to the standard cosmological model.</p>
+                </div>
+                
+                <div class="concept-box">
+                    <h3 class="concept-title"><i class="fas fa-rocket"></i> What's Next?</h3>
+                    <p>Scientists will test this model with new data from projects like CMB-S4 and Euclid. If the predictions hold, it could fundamentally change our understanding of the universe. The model's code and data are available at Zenodo for further exploration.</p>
+                </div>
+                
+                <div class="action-buttons">
+                    <a href="../prl/" class="action-btn primary-btn">
+                        <i class="fas fa-file-alt"></i> PRL Technical Version
+                    </a>
+                    <a href="../arxiv/" class="action-btn secondary-btn">
+                        <i class="ai ai-arxiv"></i> arXiv Abstract
+                    </a>
+                    <!-- ADDED: Home button at bottom -->
+                    <a href="../" class="action-btn home-btn">
+                        <i class="fas fa-home"></i> Return to Home
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; <script>document.write(new Date().getFullYear())</script> Sylvain Herbin | Fractal Cosmology Research</p>
+            <p>Hosted on GitHub Pages</p>
+        </div>
+    </footer>
+</body>
+</html>

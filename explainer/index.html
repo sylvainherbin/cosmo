@@ -3,16 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Science Explainers | Fractal Cosmology - Sylvain Herbin</title>
+    <title>Dynamic Fractal Cosmology Explained | Sylvain Herbin</title>
     
-    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
     
-    <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
     
-    <!-- MathJax -->
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     
@@ -463,18 +460,14 @@
     </style>
 </head>
 <body>
-    <!-- Fixed Header -->
     <header class="header-container">
         <div class="header-content">
             <a href="../" class="site-title">Sylvain Herbin</a>
             <nav class="main-nav">
-                <!-- MODIFIED: PRL Version now points to DOI -->
-                <a href="https://doi.org/10.5281/zenodo.15863407" class="nav-link" target="_blank">
-                    <i class="fas fa-file-alt"></i> PRL Version
+                <a href="https://doi.org/10.5281/zenodo.15973541" class="nav-link" target="_blank">
+                    <i class="fas fa-file-alt"></i> Full Paper
                 </a>
-                <a href="../arxiv/" class="nav-link">arXiv Abstract</a>
-                <a href="../explainer/" class="nav-link active">Science Explainers</a>
-                <!-- ADDED: Home button in navigation -->
+                <a href="./" class="nav-link active">Science Explainers</a>
                 <a href="../" class="nav-link">
                     <i class="fas fa-home"></i> Home
                 </a>
@@ -482,153 +475,109 @@
         </div>
     </header>
 
-    <!-- Main Content -->
     <main class="main-content">
         <div class="container">
-            <h2 class="section-title">Fractal Cosmology Explained</h2>
+            <h2 class="section-title">Dynamic Fractal Cosmology Explained</h2>
             
             <div class="explainer-card">
                 <div class="abstract-box">
-                    <h3>In a Nutshell</h3>
-                    <p>This cosmological model uses a fractal structure based on the Fibonacci sequence to describe the universe. Unlike the standard model, it combines gravity, quantum mechanics, and the role of observers in a unified way. Starting from a point with no dimensions, the model grows into multiple universes through a special process, solving mysteries about the universe's expansion and structure.</p>
+                    <h3>Un Voyage Cosmique à Travers le Nombre d'Or</h3>
+                    <p>Ce modèle cosmologique propose une nouvelle façon de comprendre l'univers en se basant sur une **dimension fractale** qui évolue. Inspiré par la séquence de Fibonacci et le nombre d'or ($\phi$), il montre comment notre univers, depuis ses premiers instants, a vu cette dimension changer. Cette approche unique aide à résoudre des mystères comme la tension de Hubble et certaines anomalies dans le fond diffus cosmologique (CMB), offrant un ajustement remarquable aux données réelles.</p>
                 </div>
                 
                 <div class="concept-box">
-                    <h3 class="concept-title"><i class="fas fa-question-circle"></i> Why a New Model?</h3>
-                    <p>In cosmology, scientists face puzzles like disagreements about the Hubble constant or unusual patterns in the cosmic microwave background (CMB). The standard model, ΛCDM, struggles to explain these issues. Our fractal model offers a solution by combining gravity, quantum mechanics, and the Fibonacci sequence.</p>
+                    <h3 class="concept-title"><i class="fas fa-question-circle"></i> Pourquoi une Nouvelle Vision de l'Univers ?</h3>
+                    <p>La cosmologie moderne est un immense succès, mais elle fait face à des énigmes. Par exemple, les différentes manières de mesurer le **taux d'expansion de l'univers (la constante de Hubble, $H_0$)** ne sont pas d'accord entre elles. C'est la "tension de Hubble". Il y a aussi des anomalies dans le **fond diffus cosmologique (CMB)**, la première lumière de l'univers, que le modèle standard a du mal à expliquer. Notre modèle fractal dynamique apporte des réponses élégantes à ces défis.</p>
                 </div>
                 
                 <div class="concept-box">
-                    <h3 class="concept-title"><i class="fas fa-seedling"></i> The Starting Point</h3>
-                    <p>The universe begins as a single point with no dimensions. The genesis operator (\(\mathcal{O}\)) starts a chain reaction, creating time and space:</p>
+                    <h3 class="concept-title"><i class="fas fa-seedling"></i> L'Évolution du Nombre d'Or ($\phi$)</h3>
+                    <p>Au cœur de notre modèle, il y a l'idée que le **nombre d'or ($\phi \approx 1.618$)** n'est pas constant mais a évolué avec l'univers. Au début, dans l'univers primordial, cette "dimension fractale" était de $\phi_0=1.5$ (le rapport 3/2, une valeur clé des premières étapes de la séquence de Fibonacci). Avec l'expansion cosmique, elle a progressivement atteint sa valeur actuelle de $1.618$. Cette transition se décrit par une simple formule :</p>
                     
                     <div class="math-container">
-                        \[ \mathcal{O}(0) = 1, \quad \mathcal{O}(1) = -1 \]
-                        \[ F_n = F_{n-1} + F_{n-2} \]
+                        \[ \phi(z) = \phi_\infty - (\phi_\infty - \phi_0)e^{-\Gamma z} \]
                     </div>
                     
-                    <p>Here, \(F_n\) is the Fibonacci sequence, where each number is the sum of the two before it. The operator flips between positive and negative values to start the universe's growth.</p>
+                    <p>où $\phi(z)$ est la valeur du nombre d'or à un redshift $z$ donné, $\phi_0=1.5$, $\phi_\infty=1.618$, et $\Gamma=0.23$ est un taux de transition. C'est comme une fleur qui s'ouvre, passant d'une forme simple à une forme plus complexe.</p>
                 </div>
                 
                 <div class="concept-box">
-                    <h3 class="concept-title"><i class="fas fa-calculator"></i> Fibonacci & Golden Ratio</h3>
-                    <p>The Fibonacci sequence is a series of numbers:</p>
+                    <h3 class="concept-title"><i class="fas fa-globe-americas"></i> L'Univers sous une Nouvelle Lumière</h3>
+                    <p>Cette évolution de $\phi$ change la façon dont nous décrivons l'univers, en particulier comment la matière et l'énergie noire interagissent. Les équations qui régissent l'expansion de l'univers (les équations de Friedmann) sont modifiées pour inclure ce $\phi(z)$ dynamique :</p>
                     
                     <div class="math-container">
-                        \[ F_0 = 0, \quad F_1 = 1, \quad F_n = F_{n-1} + F_{n-2} \]
+                        \[ H^2(z) = H_0^2\left[\Omega_m(1+z)^{3\phi(z)} + \Omega_\Lambda(1+z)^{3(2-\phi(z))}\right] \]
                     </div>
                     
-                    <p>As the sequence grows, the ratio of consecutive numbers approaches the golden ratio:</p>
-                    
-                    <div class="math-container">
-                        \[ \phi = \lim_{n \to \infty} \frac{F_n}{F_{n-1}} \approx 1.618 \]
-                    </div>
-                    
-                    <p>This number, \(\phi\), shapes the universe's fractal structure—a pattern that repeats at different scales, like a snowflake.</p>
+                    <p>Cela signifie que le comportement de l'univers est intrinsèquement lié à cette dimension fractale en constante évolution. C'est une vision du cosmos où les structures s'organisent selon des motifs naturels, un peu comme les branches d'un arbre ou les veines d'une feuille.</p>
                 </div>
                 
                 <div class="concept-box">
-                    <h3 class="concept-title"><i class="fas fa-globe-americas"></i> Multiple Universes</h3>
-                    <p>The model suggests many universes, each following the Fibonacci pattern:</p>
-                    
-                    <div class="math-container">
-                        \[ \mathcal{U}_n = f_n(S_p, F_n) \]
-                        \[ \dim_{\mathscr{F}}(\mathcal{U}_n) \approx \phi \]
-                    </div>
-                    
-                    <p>Here, \(\mathcal{U}_n\) represents a universe, and its "dimension" is close to the golden ratio, making it fractal. These universes are connected, like layers in a cosmic onion.</p>
-                </div>
-                
-                <div class="concept-box">
-                    <h3 class="concept-title"><i class="fas fa-eye"></i> The Role of Observers</h3>
-                    <p>The model includes a mathematical rule that combines gravity and quantum mechanics:</p>
-                    
-                    <div class="math-container">
-                        \[ \mathcal{L}_n = \sqrt{-g} \left( \frac{R}{16\pi G} + \phi \langle \psi_n | \mathcal{O} | \psi_n \rangle \right) \]
-                    </div>
-                    
-                    <p>This equation describes how the universe's shape (gravity, \(R\)) and tiny particles (quantum mechanics, \(\psi_n\)) work together, guided by the genesis operator and the golden ratio. Observers help define the universe's structure.</p>
-                </div>
-                
-                <div class="concept-box">
-                    <h3 class="concept-title"><i class="fas fa-lightbulb"></i> Key Predictions</h3>
-                    <p>This model makes specific predictions that scientists can test:</p>
+                    <h3 class="concept-title"><i class="fas fa-lightbulb"></i> Les Prédictions Clés du Modèle</h3>
+                    <p>Notre modèle ne se contente pas d'expliquer, il fait aussi des **prédictions précises** que les scientifiques peuvent vérifier :</p>
                     
                     <ul class="prediction-list">
-                        <li>The cosmic microwave background (CMB) should show patterns matching the golden ratio (\(\alpha \approx 1.618 \pm 0.1\))</li>
-                        <li>Galaxies should cluster following a related number (\(\gamma \approx 1.382 \pm 0.1\))</li>
-                        <li>The golden ratio should be extremely stable (\(\delta \phi \sim 10^{-5}\))</li>
+                        <li><strong>Résolution de la tension de Hubble :</strong> Le modèle prédit une valeur de $H_0=73.04\pm0.38$ km/s/Mpc, ce qui réconcilie les mesures "locales" et celles du CMB.</li>
+                        <li><strong>Anomalies du CMB :</strong> Il explique le "déficit de puissance" observé dans le CMB aux grandes échelles (pour $\ell<30$), avec un ajustement exceptionnel aux données de Planck.</li>
+                        <li><strong>Déviations BAO :</strong> Le modèle prédit de légères déviations dans la taille de l'horizon sonore (BAO), qui pourront être testées par de futures missions.</li>
+                        <li><strong>Croissance des structures :</strong> Il prédit une croissance des structures de l'univers ($f(z)$) qui dépend de la valeur de $\phi(z)$.</li>
                     </ul>
-                    
-                    <p>These predictions will be tested with telescopes and experiments like CMB-S4 and Euclid in 2026-2027.</p>
                 </div>
                 
                 <div class="concept-box">
-                    <h3 class="concept-title"><i class="fas fa-balance-scale"></i> Model Comparison</h3>
+                    <h3 class="concept-title"><i class="fas fa-balance-scale"></i> Une Meilleure Adéquation aux Données</h3>
+                    <p>Nous avons testé notre modèle contre les données les plus récentes du télescope spatial Planck (2018) pour le fond diffus cosmologique. Voici comment il se compare aux autres modèles :</p>
+                    
                     <table class="comparison-table">
                         <thead>
                             <tr>
-                                <th>Model</th>
-                                <th>Error Score (χ²)</th>
-                                <th>p-value</th>
-                                <th>Improvement</th>
+                                <th>Modèle</th>
+                                <th>Score d'erreur ($\chi^2/\text{dof}$)</th>
+                                <th>Comparaison</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Standard Model (ΛCDM)</td>
-                                <td>142.0</td>
-                                <td>0.015</td>
-                                <td>Baseline</td>
+                                <td>Modèle Fractal Statique ($\phi=1.5$ constant)</td>
+                                <td>5.40</td>
+                                <td>Référence</td>
                             </tr>
                             <tr>
-                                <td>Modified Gravity (f(R))</td>
-                                <td>138.5</td>
-                                <td>0.010</td>
-                                <td>+3%</td>
-                            </tr>
-                            <tr>
-                                <td style="font-weight: 600;">Fractal Model</td>
-                                <td style="font-weight: 600;">120.5</td>
-                                <td style="font-weight: 600;">0.002</td>
-                                <td style="font-weight: 600; color: var(--accent);">+15%</td>
+                                <td style="font-weight: 600;">Modèle Fractal Dynamique</td>
+                                <td style="font-weight: 600;">1.72</td>
+                                <td style="font-weight: 600; color: var(--accent);">**3x mieux !**</td>
                             </tr>
                         </tbody>
                     </table>
-                    <p>The fractal model reduces errors by 15% compared to the standard cosmological model.</p>
+                    <p>Un score $\chi^2/\text{dof}$ plus bas signifie que le modèle correspond mieux aux observations. Notre modèle dynamique s'ajuste aux données plus de **trois fois mieux** que le modèle fractal statique précédent, démontrant sa robustesse.</p>
                 </div>
                 
                 <div class="concept-box">
-                    <h3 class="concept-title"><i class="fas fa-rocket"></i> What's Next?</h3>
-                    <p>Scientists will test this model with new data from projects like CMB-S4 and Euclid. If the predictions hold, it could fundamentally change our understanding of the universe. The model's code and data are available at Zenodo for further exploration.</p>
+                    <h3 class="concept-title"><i class="fas fa-rocket"></i> Quelle est la Prochaine Étape ?</h3>
+                    <p>Les prédictions de ce modèle pourront être rigoureusement testées avec les données des futures missions d'observation, comme le DESI, Euclid, et le SKA. Ces télescopes nous apporteront des informations encore plus précises sur l'expansion de l'univers et la distribution de la matière. Les codes et les données associés à ce modèle sont disponibles sur Zenodo, permettant à la communauté scientifique mondiale d'explorer et de bâtir sur cette nouvelle approche. L'avenir de la cosmologie s'annonce passionnant !</p>
                 </div>
                 
                 <div class="action-buttons">
-                    <!-- MODIFIED: PRL Technical Version now points to DOI -->
-                    <a href="https://doi.org/10.5281/zenodo.15863407" class="action-btn doi-btn" target="_blank">
-                        <i class="fas fa-file-alt"></i> PRL Technical Version
+                    <a href="https://doi.org/10.5281/zenodo.15973541" class="action-btn doi-btn" target="_blank">
+                        <i class="fas fa-file-alt"></i> Accéder au Document Complet
                     </a>
-                    <a href="../arxiv/" class="action-btn secondary-btn">
-                        <i class="ai ai-arxiv"></i> arXiv Abstract
-                    </a>
-                    <!-- ADDED: Home button at bottom -->
                     <a href="../" class="action-btn home-btn">
-                        <i class="fas fa-home"></i> Return to Home
+                        <i class="fas fa-home"></i> Retour à l'Accueil
                     </a>
                 </div>
             </div>
         </div>
     </main>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; <script>document.write(new Date().getFullYear())</script> Sylvain Herbin | Fractal Cosmology Research</p>
-            <a href="https://doi.org/10.5281/zenodo.15863407" class="doi-badge" target="_blank">
-                <i class="ai ai-doi"></i> DOI: 10.5281/zenodo.15863407
+            <p>&copy; <script>document.write(new Date().getFullYear())</script> Sylvain Herbin | Dynamic Fractal Cosmology Research</p>
+            <a href="https://doi.org/10.5281/zenodo.15973541" class="doi-badge" target="_blank">
+                <i class="ai ai-doi"></i> DOI: 10.5281/zenodo.15973541
             </a>
-            <p>Hosted on GitHub Pages</p>
+            <p>Hébergé sur GitHub Pages</p>
         </div>
     </footer>
 </body>
 </html>
+

@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
     
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Source+Sans+Pro:wght@300;400;600&family=Playfair+Display:wght0;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Source+Sans+Pro:wght@300;400;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
     
     <style>
         /* --- Variables and Reset --- */
@@ -229,6 +229,7 @@
             background: var(--gold);
         }
 
+        /* Math container for block equations only */
         .math-container {
             background: linear-gradient(to right, rgba(62, 109, 156, 0.03), rgba(212, 175, 55, 0.08));
             padding: 30px;
@@ -239,7 +240,7 @@
             line-height: 1.8;
             border-left: 4px solid var(--gold);
             position: relative;
-            overflow-x: auto;
+            overflow-x: auto; /* Ensures horizontal scroll for wide equations */
         }
 
         .math-container p {
@@ -247,6 +248,12 @@
             position: relative;
             z-index: 2;
         }
+        /* Ensure MathJax block equations are correctly rendered within this container */
+        .math-container .MathJax {
+            text-align: center;
+            padding: 0 10px; /* Add some padding if needed for overflow */
+        }
+
 
         .doi-badge {
             display: inline-block;
@@ -595,46 +602,46 @@
         <div class="research-card">
             <h2 class="card-title">Key Features & Insights</h2>
             <ul class="key-features">
-                <li><strong>Dynamic Golden Ratio ($\phi$) Evolution:</strong> Introduces a phase transition for $\phi$ from a primordial value of 1.5 to its modern value of 1.618, driven by cosmic expansion.</li>
-                <li><strong>Hubble Tension Resolution:</strong> The model naturally resolves the $H_0$ tension with a prediction of $H_0=73.04\pm0.38$ km/s/Mpc, aligning local and CMB measurements.</li>
-                <li><strong>CMB Anomaly Explanation:</strong> Explains the observed CMB power deficit at large angular scales ($\ell<30$) through scale-dependent fractal dimensions.</li>
+                <li><strong>Dynamic Golden Ratio (phi) Evolution:</strong> Introduces a phase transition for phi from a primordial value of 1.5 to its modern value of 1.618, driven by cosmic expansion.</li>
+                <li><strong>Hubble Tension Resolution:</strong> The model naturally resolves the H0 tension with a prediction of H0=73.04&plusmn;0.38 km/s/Mpc, aligning local and CMB measurements.</li>
+                <li><strong>CMB Anomaly Explanation:</strong> Explains the observed CMB power deficit at large angular scales (l&lt;30) through scale-dependent fractal dimensions.</li>
                 <li><strong>Predictive Power for BAO:</strong> Foresees specific deviations in the Baryon Acoustic Oscillation (BAO) scale.</li>
-                <li><strong>Improved Data Fit:</strong> Achieves a significantly better fit to Planck 2018 TT+lowE data ($\chi^2/\text{dof}=1.72$) compared to static fractal models.</li>
+                <li><strong>Improved Data Fit:</strong> Achieves a significantly better fit to Planck 2018 TT+lowE data (chi^2/dof=1.72) compared to static fractal models.</li>
             </ul>
             
             <div class="features-grid">
                 <div class="feature-card">
                     <h3 class="feature-title"><i class="fas fa-chart-line"></i> Evolution of Fractal Dimension</h3>
                     <div class="feature-content">
-                        <p>FIG. 1. Evolution of the fractal dimension showing transition between primordial ($\phi_0 = 1.5$) and modern ($\phi_\infty = 1.618$) values.</p>
+                        <p>FIG. 1. Evolution of the fractal dimension showing transition between primordial (phi_0 = 1.5) and modern (phi_infinity = 1.618) values.</p>
                     </div>
                 </div>
                 
                 <div class="feature-card">
                     <h3 class="feature-title"><i class="fas fa-infinity"></i> Fibonacci Convergence</h3>
                     <div class="feature-content">
-                        <p>FIG. 2. Convergence of Fibonacci ratios toward $\phi$. The primordial value $\phi_0 = 1.5$ ($F_4/F_3$) marks the onset of fractal dimensionality.</p>
+                        <p>FIG. 2. Convergence of Fibonacci ratios toward phi. The primordial value phi_0 = 1.5 (F_4/F_3) marks the onset of fractal dimensionality.</p>
                     </div>
                 </div>
                 
                 <div class="feature-card">
                     <h3 class="feature-title"><i class="fas fa-meteor"></i> CMB Spectrum Analysis</h3>
                     <div class="feature-content">
-                        <p>FIG. 3. CMB spectrum showing fractal corrections at $\ell<30$ (blue band) compared to $\Lambda$CDM (dashed line). Data points from Planck 2018.</p>
+                        <p>FIG. 3. CMB spectrum showing fractal corrections at l&lt;30 (blue band) compared to LambdaCDM (dashed line). Data points from Planck 2018.</p>
                     </div>
                 </div>
 
                 <div class="feature-card">
                     <h3 class="feature-title"><i class="fas fa-ruler-combined"></i> Hubble Constant Measurements</h3>
                     <div class="feature-content">
-                        <p>FIG. 4. Hubble constant measurements with $1\sigma$ errors: Planck (CMB), Freedman et al. (TRGB), and Riess et al. (SNIa). Dashed line shows model prediction with $\pm0.38$ km/s/Mpc uncertainty.</p>
+                        <p>FIG. 4. Hubble constant measurements with 1sigma errors: Planck (CMB), Freedman et al. (TRGB), and Riess et al. (SNIa). Dashed line shows model prediction with &plusmn;0.38 km/s/Mpc uncertainty.</p>
                     </div>
                 </div>
 
                 <div class="feature-card">
                     <h3 class="feature-title"><i class="fas fa-check-double"></i> Model Fit Comparison</h3>
                     <div class="feature-content">
-                        <p>FIG. 5. Comparison of $\chi^2/\text{dof}$ for the dynamic fractal model (1.72) and the static fractal model with $\phi=1.5$ (5.40), using Planck 2018 TT+lowE data.</p>
+                        <p>FIG. 5. Comparison of chi^2/dof for the dynamic fractal model (1.72) and the static fractal model with phi=1.5 (5.40), using Planck 2018 TT+lowE data.</p>
                     </div>
                 </div>
             </div>

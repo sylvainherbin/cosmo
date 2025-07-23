@@ -1,1 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PCXPDQHN');</script>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Fractal Cosmology: For Scientists</title>
+
+    <meta name="description" content="Detailed scientific overview of Dynamic Fractal Cosmology, including equations, optimized parameters, BAO and SNIa analysis, and implications for Hubble Tension and CMB anomalies.">
+    <meta name="keywords" content="cosmology, fractal universe, Hubble Tension, CMB anomaly, golden ratio, new universe theory, scientific paper, BAO, SNIa, chi-squared, Friedmann equations, Planck data">
+    <meta name="author" content="Sylvain Herbin">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sylvainherbin.github.io/cosmo/scientists/scientists.html">
+    <meta property="og:title" content="Dynamic Fractal Cosmology: For Scientists">
+    <meta property="og:description" content="Detailed scientific overview of Dynamic Fractal Cosmology, including equations, optimized parameters, BAO and SNIa analysis, and implications for Hubble Tension and CMB anomalies.">
+    <meta property="og:image" content="https://sylvainherbin.github.io/cosmo/figures/fractal_cosmology.JPG">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://sylvainherbin.github.io/cosmo/scientists/scientists.html">
+    <meta property="twitter:title" content="Dynamic Fractal Cosmology: For Scientists">
+    <meta property="twitter:description" content="Detailed scientific overview of Dynamic Fractal Cosmology, including equations, optimized parameters, BAO and SNIa analysis, and implications for Hubble Tension and CMB anomalies.">
+    <meta property="twitter:image" content="https://sylvainherbin.github.io/cosmo/figures/fractal_cosmology.JPG">
+
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']],
+                processEscapes: true,
+                processEnvironments: true
+            },
+            options: {
+                ignoreHtmlClass: 'tex2jax_ignore',
+                processHtmlClass: 'tex2jax_process'
+            }
+        };
+    </script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Source+Sans+Pro:wght@300;400;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- Variables and Reset --- */
+        :root {
+            --primary: #1a2639;
+            --secondary: #3e6d9c;
+            --accent: #e74c3c;
+            --light: #f5f7fa;
+            --dark: #0d1b2a;
+            --gold: #d4af37;
+            --gold-light: #e6c567;
+            --gray-light: #eef2f6;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden; /* Prevent horizontal scroll from elements overflowing */
+        }
+
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+            padding-top: 100px;
+            overflow-x: hidden; /* Ensure no horizontal scroll on body */
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        /* --- Fixed Header --- */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: linear-gradient(135deg, var(--primary), #14213d);
+            color: white;
+            padding: 15px 5%;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.4s ease;
+        }
+
+        header.scrolled {
+            padding: 10px 5%;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .site-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.6rem;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .site-title i {
+            margin-right: 10px;
+            color: var(--gold);
+        }
+
+        .site-title:hover {
+            text-decoration: none;
+            opacity: 0.9;
+        }
+
+        .main-nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-link {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            padding: 8px 15px;
+            border-radius: 30px;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(5px);
+        }
+
+        .nav-link:hover {
+            color: white;
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
+
+        .nav-link.active {
+            background: var(--gold);
+            color: var(--primary);
+        }
+
+        .nav-link i {
+            margin-right: 8px;
+            font-size: 1.1rem;
+        }
+
+        /* --- Main Content --- */
+        .container {
+            max-width: 1200px; /* Still a good max-width for large screens */
+            margin: 0 auto;
+            padding: 40px 20px; /* Adjusted fixed padding instead of percentage */
+        }
+
+        .hero-section {
+            text-align: center;
+            margin-bottom: 70px;
+            padding: 60px 0;
+            position: relative;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary);
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 30px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .hero-title::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 4px;
+            background: linear-gradient(to right, var(--gold), var(--accent));
+            border-radius: 2px;
+        }
+
+        .hero-subtitle {
+            color: var(--secondary);
+            font-size: 1.7rem;
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.5;
+            font-weight: 400;
+        }
+
+        .hero-divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--gold), transparent);
+            width: 60%;
+            margin: 40px auto;
+            opacity: 0.3;
+        }
+
+        /* New styles for the main content */
+        .content-section {
+            background: white;
+            border-radius: 16px;
+            padding: 40px; /* Consistent padding */
+            margin-bottom: 50px;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            border-top: 5px solid var(--gold);
+            position: relative;
+            overflow: hidden; /* Keep hidden to contain internal overflows without affecting layout */
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center content horizontally */
+            text-align: center; /* Center text within section */
+        }
+
+        .content-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--gold), var(--accent));
+        }
+
+        .content-section:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+        }
+
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary);
+            font-size: 2rem;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding-left: 40px;
+            text-align: left; /* Keep title aligned left within its flex container */
+            width: 100%; /* Allow title to take full width of parent */
+            justify-content: center; /* Center the title horizontally */
+        }
+
+        .section-title::before {
+            content: "";
+            position: absolute;
+            left: 0; /* Adjust this to control left spacing for the bar */
+            top: 50%;
+            transform: translateY(-50%);
+            width: 30px;
+            height: 3px;
+            background: var(--gold);
+        }
+        /* Override for titles inside content-section to adjust positioning if needed */
+        .content-section .section-title {
+            justify-content: flex-start; /* Align title left within the content-section */
+            padding-left: 0; /* Remove left padding from the title itself */
+        }
+        .content-section .section-title::before {
+             left: -40px; /* Adjust this to move the bar outside the text, relative to the content-section padding */
+        }
+
+
+        .section-content {
+            width: 100%; /* Ensure content takes full available width */
+        }
+
+        .section-content p, .section-content ul, .section-content ol {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            max-width: 900px; /* Constrain text width for readability */
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 15px; /* Add horizontal padding to text paragraphs */
+            text-align: left; /* Align text left within its constrained width */
+        }
+        .section-content ul, .section-content ol {
+            padding-left: 35px; /* Indent lists */
+        }
+        .section-content li {
+            margin-bottom: 10px;
+        }
+
+        .section-content .equation {
+            background: linear-gradient(to right, rgba(62, 109, 156, 0.03), rgba(212, 175, 55, 0.08));
+            padding: 30px 15px; /* Added padding to ensure text/equation inside doesn't hit edges */
+            border-radius: 12px;
+            margin: 30px auto;
+            font-style: italic;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            border-left: 4px solid var(--gold);
+            position: relative;
+            overflow-x: auto; /* Allow horizontal scroll for wide equations */
+            max-width: 900px; /* Match text width for consistency */
+            text-align: center; /* Center the equation itself */
+        }
+
+        .section-content .equation pre {
+            white-space: pre-wrap; /* Ensure text wraps within pre */
+            word-wrap: break-word; /* Break long words */
+        }
+
+
+        /* Image specific styles */
+        .main-visual {
+            width: calc(100% - 30px); /* Take full width minus padding for small screens */
+            max-width: 900px; /* Constrain image width */
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            margin-top: 30px;
+            margin-bottom: 40px;
+            border: 2px solid var(--gold-light);
+            display: block; /* Ensure it behaves as a block element for centering */
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .section-content img { /* For images within content sections */
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 25px auto;
+            display: block;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        /* Call-to-action button */
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.15rem;
+            text-decoration: none;
+            transition: all 0.4s ease;
+            background: linear-gradient(135deg, var(--secondary), #345c88);
+            color: white;
+            border: none;
+            box-shadow: 0 8px 25px rgba(62, 109, 156, 0.4);
+            margin-top: 30px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .cta-button:hover {
+            background: linear-gradient(135deg, var(--primary), #2a3d54);
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 12px 30px rgba(62, 109, 156, 0.6);
+        }
+
+        .cta-button i {
+            margin-left: 10px;
+            font-size: 1.3rem;
+        }
+
+        /* Scientific tables */
+        .data-table {
+            width: 100%;
+            max-width: 900px;
+            margin: 30px auto;
+            border-collapse: collapse;
+            font-size: 1rem;
+            text-align: left;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            overflow: hidden; /* Ensures rounded corners on table elements */
+        }
+
+        .data-table th, .data-table td {
+            padding: 15px 20px;
+            border: 1px solid var(--gray-light);
+        }
+
+        .data-table thead {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .data-table tbody tr:nth-child(even) {
+            background-color: var(--gray-light);
+        }
+
+        .data-table tbody tr:hover {
+            background-color: rgba(var(--gold), 0.1);
+            transform: scale(1.01);
+            transition: all 0.2s ease-in-out;
+        }
+
+        .data-table caption {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 1.2rem;
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+
+        /* --- Social Icons --- */
+        .social-container {
+            display: flex;
+            justify-content: center;
+            gap: 35px;
+            margin: 60px 0 40px;
+        }
+
+        .social-link {
+            color: var(--primary);
+            font-size: 2.8rem;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: white;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .social-link::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--gold), var(--accent));
+            opacity: 0;
+            transition: opacity 0.3s;
+            z-index: 1;
+        }
+
+        .social-link i {
+            position: relative;
+            z-index: 2;
+        }
+
+        .social-link:hover {
+            color: white;
+            transform: scale(1.15) rotate(5deg);
+            opacity: 0.9;
+        }
+
+        .social-link:hover::before {
+            opacity: 1;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background: linear-gradient(135deg, var(--primary), #0d1b2a);
+            color: white;
+            text-align: center;
+            padding: 50px 5% 30px;
+            margin-top: 50px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .copyright {
+            margin-top: 30px;
+            font-size: 1.1rem;
+            opacity: 0.8;
+        }
+
+        .research-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .footer-btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: all 0.4s ease;
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            min-width: 220px;
+            justify-content: center;
+        }
+
+        .footer-btn:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .footer-btn i {
+            margin-right: 10px;
+            font-size: 1.3rem;
+        }
+
+        .doi-link {
+            background: linear-gradient(135deg, var(--gold), #c19b30);
+        }
+
+        .doi-link:hover {
+            background: linear-gradient(135deg, var(--gold-light), var(--gold));
+        }
+
+        /* --- Responsive --- */
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 2.8rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.4rem;
+            }
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding-top: 140px;
+            }
+
+            header {
+                flex-direction: column;
+                padding: 15px;
+            }
+
+            .site-title {
+                margin-bottom: 15px;
+                font-size: 1.4rem;
+            }
+
+            .main-nav {
+                width: 100%;
+                justify-content: center;
+                gap: 10px;
+                flex-wrap: wrap;
+            }
+
+            .nav-link {
+                font-size: 0.9rem;
+                padding: 6px 12px;
+            }
+
+            .container {
+                padding: 20px; /* More generous padding on small screens */
+            }
+
+            .hero-title {
+                font-size: 2.2rem;
+                padding-bottom: 20px;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .content-section {
+                padding: 25px;
+            }
+            .section-title {
+                font-size: 1.6rem;
+                /* No specific padding-left here, it's handled by .content-section .section-title::before */
+            }
+            .section-content p,
+            .section-content .equation,
+            .section-content ul,
+            .section-content ol {
+                font-size: 1rem;
+                padding: 0 10px; /* Slightly less padding for smaller screens */
+            }
+
+            .social-link {
+                font-size: 2.2rem;
+                width: 65px;
+                height: 65px;
+            }
+
+            .footer-btn {
+                min-width: 200px;
+                font-size: 1rem;
+                padding: 10px 20px;
+            }
+            .data-table th, .data-table td {
+                padding: 10px 15px;
+                font-size: 0.9rem;
+            }
+            .main-visual {
+                width: calc(100% - 20px); /* Adjust for 20px padding of container */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 1.9rem;
+            }
+
+            .section-title {
+                font-size: 1.4rem;
+            }
+
+            .footer-btn {
+                width: 100%;
+                max-width: 300px;
+            }
+            .content-section {
+                padding: 20px; /* Even less padding for very small screens */
+            }
+            .section-title::before {
+                left: -20px; /* Adjust bar position for very small screens */
+            }
+            .section-content p,
+            .section-content .equation,
+            .section-content ul,
+            .section-content ol {
+                padding: 0; /* Remove padding for very small screens if necessary */
+            }
+            .data-table th, .data-table td {
+                padding: 8px 10px;
+                font-size: 0.8rem;
+            }
+            .main-visual {
+                width: 100%; /* Maximize image width on very small screens */
+            }
+        }
+    </style>
+</head>
+<body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PCXPDQHN"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<header>
+        <a href="../index.html" class="site-title"><i class="fas fa-atom"></i>Sylvain Herbin</a>
+        <nav class="main-nav">
+            <a href="../index.html" class="nav-link"><i class="fas fa-home"></i> Home</a>
+            <a href="scientists.html" class="nav-link active"><i class="fas fa-flask"></i> For Scientists</a>
+            <a href="https://phi1618.space/zenedo" class="nav-link" target="_blank">
+                <i class="fas fa-file-alt"></i> Full Paper
+            </a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="hero-section">
+            <h1 class="hero-title">Dynamic Fractal Cosmology: Scientific Deep Dive</h1>
+            <div class="hero-subtitle">A Detailed Examination of the Fibonacci Phase Transition Model</div>
+            <div class="hero-divider"></div>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">Introducing the Dynamic Fractal Model</h2>
+            <div class="section-content">
+                <p>The **Dynamic Fractal Cosmology** framework introduces a novel perspective on the universe's expansion, positing an evolving fractal dimension $\phi(z)$. This model challenges the static assumptions of $\Lambda$CDM by integrating the golden ratio's dynamic evolution throughout cosmic history. Our approach aims to reconcile observed cosmological tensions and anomalies, offering a more complete description of the universe's geometry and evolution.</p>
+
+                <p>The core of our model is the dynamic evolution of the fractal dimension $\phi$ as a function of redshift ($z$), characterized by a phase transition from a primordial value $\phi_0$ to a modern asymptotic value $\phi_\infty$, governed by a transition rate $\Gamma$:</p>
+                <div class="equation">
+                    \[\phi(z) = \phi_\infty - (\phi_\infty - \phi_0)e^{-\Gamma z}\]
+                </div>
+                <p>Where the optimized parameters are: $\phi_0=\text{2.970}$, $\phi_\infty=\text{1.002}$, and $\Gamma=\text{0.655}$.</p>
+                <p>This dynamic $\phi(z)$ directly modifies the Friedmann equations, providing a unique cosmological evolution:</p>
+                <div class="equation">
+                    \[H^2(z) = H_0^2\left[\Omega_m(1+z)^{3\phi(z)} + \Omega_\Lambda(1+z)^{3(2-\phi(z))}\right]\]
+                    \[\frac{\ddot{a}}{a} = -\frac{4\pi G}{3}\sum_i \rho_i(1+3w_i)\phi(z)^{1/2}\]
+                </div>
+                <p>These equations represent a departure from standard cosmology, incorporating the fractal nature into the very fabric of spacetime expansion. The evolution of $\phi(z)$ is crucial for understanding the model's predictions across different cosmic epochs.</p>
+                <img src="../figures/phi_z.png" alt="Evolution of the fractal dimension phi(z) over redshift, showing the transition between primordial and modern values." class="main-visual">
+                <p class="image-caption" style="text-align: center; font-style: italic; font-size: 0.9em; color: var(--secondary);">Fig. 1: Evolution of the fractal dimension $\phi(z)$, showing transition between primordial ($\phi_0=\text{2.970}$) and modern ($\phi_\infty=\text{1.002}$) values, with a transition rate $\Gamma=\text{0.655}$. These parameters are derived from a combined BAO and SNIa analysis.</p>
+
+                <p>The **primordial value $\phi_0 = \text{2.970}$** is a key result of our optimization. This value deviates significantly from the commonly expected golden ratio ($\approx 1.618$) or prior assumptions ($\phi_0 = 1.5$), necessitating new theoretical interpretations. For instance, the previously proposed quantum gravity consistency relation $(\phi_0)^{3/2} \approx 1.84$ for $\phi_0 = 1.5$ now yields $(\text{2.970})^{3/2} \approx 5.13$. This requires re-evaluation of its physical basis and its implications for the CMB power spectrum, where the scaling $\ell^{-1.5}$ would change to $\ell^{-\text{2.970}}$.</p>
+                <img src="../figures/fibonacci_ratios.png" alt="Relationship between Fibonacci ratios and the primordial and modern phi values, highlighting the deviation of the optimized primordial value." class="main-visual">
+                <p class="image-caption" style="text-align: center; font-style: italic; font-size: 0.9em; color: var(--secondary);">Fig. 2: The relationship between Fibonacci ratios and the new primordial value $\phi_0 = \text{2.970}$, as well as the modern value $\phi_\infty = \text{1.002}$. The new $\phi_0$ requires a specific physical justification due to its deviation from simple Fibonacci ratios.</p>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">Observational Constraints and Fit Quality</h2>
+            <div class="section-content">
+                <p>Our model's parameters were rigorously optimized through a combined $\chi^2$ minimization using **Baryon Acoustic Oscillation (BAO)** and **Pantheon+ Type Ia Supernova (SNIa)** data. This comprehensive approach allowed us to constrain the model's fundamental parameters, including the Hubble constant $H_0$, the matter density parameter $\Omega_m$, and the dynamic fractal parameters $\phi_0$, $\phi_\infty$, and $\Gamma$, along with the absolute magnitude $M$ for SNIa.</p>
+
+                <h3>Best-Fit Parameters:</h3>
+                <ul>
+                    <li>$\mathbf{H_0} = \text{70.36 km/s/Mpc}$</li>
+                    <li>$\mathbf{\Omega_m} = \text{0.283}$</li>
+                    <li>$\mathbf{\phi_0} = \text{2.970}$</li>
+                    <li>$\mathbf{\phi_\infty} = \text{1.002}$</li>
+                    <li>$\mathbf{\Gamma} = \text{0.655}$</li>
+                    <li>$\mathbf{M} = \text{-19.34 mag}$</li>
+                </ul>
+
+                <h3>Goodness of Fit:</h3>
+                <p>The combined optimization resulted in an outstanding fit to the data, demonstrating the model's strong agreement with current cosmological observations:</p>
+                <ul>
+                    <li>Minimum Combined $\mathbf{\chi^2} = \text{1706.74}$</li>
+                    <li>Total Degrees of Freedom (dof) = $\text{1701}$</li>
+                    <li>Combined $\mathbf{\chi^2/\text{dof}} = \text{1.00}$</li>
+                </ul>
+                <p>This $\chi^2/\text{dof}$ value is exceptionally close to unity, indicating a robust and statistically sound fit, comparable to, if not better than, the standard $\Lambda$CDM model for these datasets.</p>
+
+                <h3>Hubble Diagram Analysis (SNIa):</h3>
+                <p>The model's fit to the Pantheon+ SNIa data is visually represented in the Hubble Diagram. Our dynamic fractal model (red solid line) accurately traces the synthesized SNIa data (gray), showing an excellent match across various redshifts. This fit is achieved by optimizing the parameters, providing a compelling alternative to the $\Lambda$CDM standard (blue dashed line).</p>
+                <img src="../figures/hubble_diagram_comparison.pdf" alt="Hubble Diagram comparing Dynamic Fractal Model, LambdaCDM, and SNIa data." class="main-visual">
+                <p class="image-caption" style="text-align: center; font-style: italic; font-size: 0.9em; color: var(--secondary);">Fig. 3: Hubble Diagram showing distance modulus ($m-M$) vs redshift ($z$). Synthesized SNIa data (gray) are compared with the best-fit Dynamic Fractal Model (red solid line) and $\Lambda$CDM (blue dashed line).</p>
+
+                <h3>Hubble Parameter Evolution ($H(z)$):</h3>
+                <p>The evolution of $H(z)/H_0$ demonstrates how our model's fractal dynamics influence the expansion rate across cosmic time. The red solid line illustrates the behavior of the Dynamic Fractal Model, diverging from the standard $\Lambda$CDM (blue dashed line) particularly at higher redshifts, due to the $\phi(z)$ dependence.</p>
+                <img src="../figures/hz_comparison_plot.pdf" alt="Evolution of H(z)/H0 vs redshift for Dynamic Fractal Model and LambdaCDM." class="main-visual">
+                <p class="image-caption" style="text-align: center; font-style: italic; font-size: 0.9em; color: var(--secondary);">Fig. 4: Evolution of $H(z)/H_0$ vs redshift ($z$) for the Dynamic Fractal Model (red solid line) and $\Lambda$CDM (blue dashed line).</p>
+
+                <p>For a detailed breakdown of the full covariance and correlation matrices, alongside 1-sigma uncertainties for all parameters, please refer to the complete paper on Zenodo. This information is crucial for assessing parameter degeneracies and the robustness of our results.</p>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">Implications and Future Directions</h2>
+            <div class="section-content">
+                <h3>Hubble Tension Resolution:</h3>
+                <p>One of the primary motivations for this model was to address the Hubble tension. The model provides a theoretical link between the local and CMB-derived Hubble constants:</p>
+                <div class="equation">
+                    \[\frac{H_0^{\text{local}}}{H_0^{\text{CMB}}} = \frac{\phi_\infty}{\phi_{\text{eq}}}\]
+                </div>
+                <p>Given $z_{\text{eq}} \approx 3400$ (matter-radiation equality), and our optimized $\Gamma = \text{0.655}$, $\phi(z_{\text{eq}})$ is very close to $\phi_\infty$ (since $e^{-\text{0.655} \cdot 3400} \approx 0$). This yields a ratio $\approx 1$, meaning that with the current set of optimized parameters, the model does not resolve the tension between the early-universe (CMB) and late-universe ($H_0$ ladder) measurements. This indicates that further modifications to the $\phi(z)$ function or additional parameters might be necessary to fully account for this discrepancy. This is an active area of ongoing research.</p>
+                <img src="../figures/hubble_tension.png" alt="Hubble constant measurements compared to the Fractal Model prediction." class="main-visual">
+                <p class="image-caption" style="text-align: center; font-style: italic; font-size: 0.9em; color: var(--secondary);">Fig. 5: Hubble constant measurements with $1\sigma$ errors: Planck (CMB), Freedman et al. (TRGB), and Riess et al. (SNIa). The dashed red line shows the model prediction for $H_0=\text{70.36 km/s/Mpc}$.</p>
+
+                <h3>CMB Power Spectrum and BAO Scale:</h3>
+                <p>The angular power spectrum of the Cosmic Microwave Background ($D_\ell$) is predicted to reflect the fractal geometry through a scale-dependent $\phi(\ell)$:</p>
+                <div class="equation">
+                    \[D_\ell = A\left[\ell^{-\phi(\ell)} + B(\ell/30)^{-2}\right] \quad \text{with } \phi(\ell) \equiv \phi(z_\ell)\]
+                </div>
+                <p>where $z_\ell \approx 1100(\ell/100)^{-1}$. The new primordial value $\phi_0 = \text{2.970}$ implies a low-$\ell$ scaling of $\ell^{-\text{2.970}}$, which is a significant deviation from previous assumptions (e.g., $\ell^{-1.5}$). This prediction must be thoroughly tested against Planck 2018 data to assess its ability to explain observed low-$\ell$ anomalies. Similarly, the **Baryon Acoustic Oscillation (BAO)** scale, which depends on the sound horizon, is modified by $\phi(z)$. A new function $f(\phi(z))$ needs to be derived from our modified Friedmann equations and rigorously tested against forthcoming data from surveys like DESI, Euclid, and SKA2.</p>
+                <img src="../figures/cmb_spectrum.png" alt="CMB spectrum showing fractal corrections compared to LambdaCDM and Planck data." class="main-visual">
+                <p class="image-caption" style="text-align: center; font-style: italic; font-size: 0.9em; color: var(--secondary);">Fig. 6: CMB spectrum showing fractal corrections at $\ell<30$ (blue band) compared to $\Lambda$CDM (dashed line). Data points from Planck 2018. The new $\phi_0 = \text{2.970}$ changes the fractal correction shape, requiring re-analysis.</p>
+
+                <h3>Physical Interpretation of $\Gamma$:</h3>
+                <p>The transition rate $\mathbf{\Gamma=\text{0.655}}$ dictates the characteristic timescale of the fractalization process:</p>
+                <div class="equation">
+                    \[t_{\text{frac}} = \Gamma^{-1}H_0^{-1} \approx \left(\text{0.655}\right)^{-1} \times \left(\text{70.36 km/s/Mpc}\right)^{-1} \approx \text{13.9 Gyr}\]
+                </div>
+                <p>This timescale is comparable to the age of the universe and the epoch of dark energy domination in $\Lambda$CDM. The interplay between this fractal transition and known cosmic milestones (like matter-dark energy transition at $z \approx 0.3$) requires further investigation to fully grasp the physical implications.</p>
+                <img src="../figures/energy_density_phi_transition.png" alt="Evolution of relative energy density for Dynamic Fractal Model and LambdaCDM." class="main-visual">
+                <p class="image-caption" style="text-align: center; font-style: italic; font-size: 0.9em; color: var(--secondary);">Fig. 7: Evolution of relative energy density for the Dynamic Fractal Model (dashed lines) and $\Lambda$CDM (solid lines). The shaded band highlights the $\phi(z)$ transition zone.</p>
+
+                <h3>Further Research:</h3>
+                <p>While the initial results are highly promising, particularly the excellent fit to current data, several avenues require further theoretical development and observational validation. This includes a deeper theoretical justification for the emergent $\phi_0$ value, refining the relationship between $\phi(z)$ and the CMB/BAO scales, and exploring more complex forms for $\phi(z)$ that might more fully address the Hubble tension. The implications for galaxy cluster mass functions and other cosmological probes are also crucial for comprehensive validation.</p>
+
+                <p>We invite the scientific community to engage with this model. For an exhaustive presentation of the methodology, detailed derivations, complete data analysis, and full uncertainties/covariance matrices, please consult the complete research paper.</p>
+
+                <a href="https://phi1618.space/zenedo" class="cta-button" target="_blank">
+                    Access the Full Research Paper on Zenodo <i class="fas fa-external-link-alt"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="social-container">
+            <a href="https://phi1618.space/orcid" class="social-link" title="ORCID" target="_blank">
+                <i class="fab fa-orcid"></i>
+            </a>
+            <a href="https://phi1618.space/zenedo" class="social-link" title="Zenodo" target="_blank">
+                <i class="ai ai-zenodo"></i>
+            </a>
+            <a href="https://phi1618.space/x" class="social-link" title="Twitter" target="_blank">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="mailto:herbinsylvain@protonmail.com" class="social-link" title="Email" target="_blank">
+                <i class="fas fa-envelope"></i>
+            </a>
+            <a href="https://phi1618.space/github" class="social-link" title="GitHub" target="_blank">
+                <i class="fab fa-github"></i>
+            </a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="research-links">
+                <a href="https://phi1618.space/zenedo" class="footer-btn doi-link" target="_blank">
+                    <i class="fas fa-file-alt"></i> View Full Paper
+                </a>
+                <a href="../index.html" class="footer-btn"><i class="fas fa-home"></i> Back to Home</a>
+                <a href="https://phi1618.space/zenedo" class="footer-btn doi-link" target="_blank">
+                    <i class="ai ai-doi"></i> View on Zenodo
+                </a>
+            </div>
+            <p class="copyright">&copy; <script>document.write(new Date().getFullYear())</script> Sylvain Herbin | Dynamic Fractal Cosmology Research</p>
+        </div>
+    </footer>
+
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>
 

@@ -6,13 +6,13 @@
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-PCXPDQHN');</script>
+})(w,d,s,l,i);</script>
 <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dynamic Fractal Cosmology: For Scientists</title>
 
     <meta name="description" content="Detailed scientific overview of Dynamic Fractal Cosmology, including equations, optimized parameters, BAO and SNIa analysis, and implications for Hubble Tension and CMB anomalies.">
-    <meta name="keywords" content="cosmology, fractal universe, Hubble Tension, CMB anomaly, golden ratio, new universe theory, scientific paper, BAO, SNIa, chi-squared, Friedmann equations, Planck data">
+    <meta name="keywords" content="cosmology, fractal universe, Hubble Tension, CMB anomaly, golden ratio, new universe theory, scientific paper, BAO, SNIa, chi-squared, Friedmann equations, Planck data, large-scale structure, galaxy clusters">
     <meta name="author" content="Sylvain Herbin">
 
     <meta property="og:type" content="website">
@@ -247,6 +247,33 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             transform: translateY(-10px);
             box-shadow: 0 20px 50px rgba(0,0,0,0.15);
         }
+
+        /* Special style for the phi(z) validation section */
+        .phi-validation-section {
+            background: linear-gradient(145deg, #e0f2f7, #cce7f0); /* Light blue gradient */
+            border-top: 5px solid var(--secondary); /* Stronger blue border */
+            box-shadow: 0 15px 50px rgba(62, 109, 156, 0.25); /* More pronounced shadow */
+            position: relative;
+            overflow: hidden;
+        }
+
+        .phi-validation-section::before {
+            background: linear-gradient(to right, var(--secondary), var(--gold)); /* Blue to gold gradient on top bar */
+        }
+
+        .phi-validation-section:hover {
+            transform: translateY(-12px) scale(1.005); /* Slightly more emphasis on hover */
+            box-shadow: 0 25px 60px rgba(62, 109, 156, 0.35);
+        }
+
+        .phi-validation-section .section-title {
+            color: var(--secondary); /* Title color matching the section theme */
+        }
+
+        .phi-validation-section .section-title::before {
+            background: var(--secondary); /* Bar color matching the section theme */
+        }
+
 
         .section-title {
             font-family: 'Montserrat', sans-serif;
@@ -670,78 +697,78 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <header>
         <a href="../index.html" class="site-title"><i class="fas fa-atom"></i>Sylvain Herbin</a>
         <nav class="main-nav">
-            <a href="../index.html" class="nav-link"><i class="fas fa-home"></i> Accueil</a>
-            <a href="scientists.html" class="nav-link active"><i class="fas fa-flask"></i> Pour les scientifiques</a>
+            <a href="../index.html" class="nav-link"><i class="fas fa-home"></i> Home</a>
+            <a href="scientists.html" class="nav-link active"><i class="fas fa-flask"></i> For Scientists</a>
             <a href="https://phi1618.space/zenedo" class="nav-link" target="_blank">
-                <i class="fas fa-file-alt"></i> Article Complet
+                <i class="fas fa-file-alt"></i> Full Paper
             </a>
         </nav>
     </header>
 
     <main class="container">
         <div class="hero-section">
-            <h1 class="hero-title">Cosmologie Fractale Dynamique : Analyse Approfondie</h1>
-            <div class="hero-subtitle">Le Modèle de Transition de Phase de Fibonacci : Résultats et Implications</div>
+            <h1 class="hero-title">Dynamic Fractal Cosmology: In-Depth Scientific Analysis</h1>
+            <div class="hero-subtitle">The Fibonacci Phase Transition Model: Results and Implications</div>
             <div class="hero-divider"></div>
         </div>
 
         <div class="content-section">
             <h2 class="section-title">Abstract</h2>
             <div class="section-content">
-                <p>Nous présentons un cadre cosmologique fractal complet où le nombre d'or $\phi$ évolue dynamiquement des époques primordiales ($\phi_0=\text{2.970}$) aux époques modernes ($\phi_\infty=\text{1.002}$). Cette transition de phase, caractérisée par le paramètre de taux $\Gamma=\text{0.655}$, est déterminée par une optimisation combinée avec les données BAO et SNIa. Notre modèle fournit une constante de Hubble de meilleur ajustement de $H_0=\text{70.36}$ km/s/Mpc, ainsi que $\Omega_m=\text{0.283}$ et une magnitude absolue $M=\text{-19.34}$ mag. L'optimisation combinée sur les données BAO et les supernovae de Type Ia Pantheon+ se traduit par un excellent ajustement global avec un $\chi^2/\text{dof}=\text{1.00}$ combiné minimum. La nouvelle valeur de $\phi_0$ nécessite une réévaluation des interprétations physiques, et la capacité du modèle à résoudre la tension de Hubble nécessite une analyse plus approfondie.</p>
+                <p>We present a comprehensive fractal cosmological framework where the golden ratio $\phi$ dynamically evolves from primordial epochs ($\phi_0=\text{2.970}$) to modern times ($\phi_\infty=\text{1.002}$). This phase transition, characterized by the rate parameter $\Gamma=\text{0.655}$, is determined by a combined optimization using BAO and SNIa data. Our model yields a best-fit Hubble constant of $H_0=\text{70.36}$ km/s/Mpc, along with $\Omega_m=\text{0.283}$ and an absolute magnitude $M=\text{-19.34}$ mag. The combined optimization on BAO and Pantheon+ Type Ia supernovae results in an excellent overall fit with a minimum combined $\chi^2/\text{dof}=\text{1.00}$. The new $\phi_0$ value necessitates a re-evaluation of physical interpretations, and the model's ability to resolve the Hubble tension requires further in-depth analysis.</p>
             </div>
         </div>
 
         ---
 
-        <div class="content-section">
-            <h2 class="section-title">Validation de la Fonction $\phi(z)$</h2>
+        <div class="content-section phi-validation-section">
+            <h2 class="section-title">Validation of the $\phi(z)$ Function</h2>
             <div class="section-content">
-                <p>Le cœur de notre modèle réside dans l'évolution dynamique de la dimension fractale $\phi$ avec le décalage vers le rouge ($z$). Cette fonction, paramétrée par des valeurs primordiales ($\phi_0$), asymptotiques ($\phi_\infty$) et un taux de transition ($\Gamma$), est cruciale pour décrire l'expansion de l'univers :</p>
+                <p>The core of our model lies in the dynamic evolution of the fractal dimension $\phi$ with redshift ($z$). This function, parameterized by primordial ($\phi_0$), asymptotic ($\phi_\infty$) values, and a transition rate ($\Gamma$), is crucial for describing the expansion of the universe:</p>
                 <div class="equation">
                     \[\phi(z) = \phi_\infty - (\phi_\infty - \phi_0)e^{-\Gamma z}\]
                 </div>
-                <p>L'optimisation globale sur les données BAO et SNIa a permis de contraindre ces paramètres avec une grande précision :</p>
+                <p>Global optimization on BAO and SNIa data allowed us to constrain these parameters with high precision:</p>
                 <ul>
                     <li>$\mathbf{\phi_0 = \text{2.970}}$</li>
                     <li>$\mathbf{\phi_\infty = \text{1.002}}$</li>
                     <li>$\mathbf{\Gamma = \text{0.655}}$</li>
                 </ul>
-                <p>La figure ci-dessous illustre cette évolution, montrant une transition claire entre les époques. La valeur de $\phi_0=\text{2.970}$ est particulièrement notable, car elle s'écarte des hypothèses précédentes basées sur des ratios simples du nombre d'or. Cette découverte implique une réévaluation des interprétations physiques, notamment en ce qui concerne la cohérence avec la gravité quantique ou les prédictions du spectre de puissance du CMB.</p>
+                <p>The figure below illustrates this evolution, showing a clear transition between epochs. The value of $\phi_0=\text{2.970}$ is particularly notable, as it deviates from previous assumptions based on simple golden ratio values. This finding implies a re-evaluation of physical interpretations, especially regarding consistency with quantum gravity or predictions of the CMB power spectrum.</p>
                 <img src="../figures/phi_z.png" alt="Evolution of the fractal dimension phi(z) over redshift, showing the transition between primordial and modern values." class="main-visual">
-                <p class="image-caption" style="text-align: center; font-style: italic; font-size: 0.9em; color: var(--secondary);">Fig. 1: Évolution de la dimension fractale $\phi(z)$, illustrant la transition entre les valeurs primordiale ($\phi_0=\text{2.970}$) et moderne ($\phi_\infty=\text{1.002}$), avec un taux de transition $\Gamma=\text{0.655}$. Ces paramètres sont dérivés d'une analyse combinée BAO et SNIa.</p>
+                <p class="image-caption" style="text-align: center; font-style: italic; font-size: 0.9em; color: var(--secondary);">Fig. 1: Evolution of the fractal dimension $\phi(z)$, illustrating the transition between primordial ($\phi_0=\text{2.970}$) and modern ($\phi_\infty=\text{1.002}$) values, with a transition rate $\Gamma=\text{0.655}$. These parameters are derived from a combined BAO and SNIa analysis.</p>
                 <img src="../figures/fibonacci_ratios.png" alt="Relationship between Fibonacci ratios and the primordial and modern phi values, highlighting the deviation of the optimized primordial value." class="main-visual">
-                <p class="image-caption" style="text-align: center; font-style: italic; font-size: 0.9em; color: var(--secondary);">Fig. 2: Relation entre les ratios de Fibonacci et les nouvelles valeurs primordiale ($\phi_0 = \text{2.970}$) et moderne ($\phi_\infty = \text{1.002}$). La nouvelle valeur de $\phi_0$ nécessite une justification physique spécifique en raison de sa déviation par rapport aux ratios de Fibonacci simples.</p>
+                <p class="image-caption" style="text-align: center; font-style: italic; font-size: 0.9em; color: var(--secondary);">Fig. 2: The relationship between Fibonacci ratios and the new primordial value $\phi_0 = \text{2.970}$, as well as the modern value $\phi_\infty = \text{1.002}$. The new $\phi_0$ requires specific physical justification due to its deviation from simple Fibonacci ratios.</p>
             </div>
         </div>
 
         ---
 
         <div class="content-section">
-            <h2 class="section-title">Tests sur les Données BAO et SNIa</h2>
+            <h2 class="section-title">Tests on BAO and SNIa Data</h2>
             <div class="section-content">
-                <p>L'efficacité du modèle de Cosmologie Fractale Dynamique est testée par sa capacité à s'ajuster aux données observationnelles. Nous avons réalisé une minimisation du $\chi^2$ en utilisant les données des oscillations acoustiques baryoniques (BAO) et des supernovae de Type Ia (SNIa) de Pantheon+, des sondes cosmologiques parmi les plus précises.</p>
+                <p>The effectiveness of the Dynamic Fractal Cosmology model is tested by its ability to fit observational data. We performed a $\chi^2$ minimization using Baryon Acoustic Oscillation (BAO) and Pantheon+ Type Ia Supernova (SNIa) data, which are among the most precise cosmological probes.</p>
 
-                <h3>Analyse des Supernovae de Type Ia (SNIa)</h3>
-                <p>Nous avons ajusté le modèle aux modules de distance ($m_b$) des supernovae de Type Ia en fonction du décalage vers le rouge ($z_{\text{CMB}}$), en utilisant la matrice de covariance complète des données Pantheon+. Les paramètres clés déterminés par cet ajustement sont la constante de Hubble $H_0$, la densité de matière $\Omega_m$ et la magnitude absolue $M$ des SNIa, en plus des paramètres $\phi_0$, $\phi_\infty$ et $\Gamma$ de la fonction $\phi(z)$.</p>
+                <h3>Type Ia Supernovae (SNIa) Analysis</h3>
+                <p>We fitted the model to the distance moduli ($m_b$) of Type Ia supernovae as a function of redshift ($z_{\text{CMB}}$), using the full covariance matrix of the Pantheon+ data. The key parameters determined by this fit are the Hubble constant $H_0$, the matter density $\Omega_m$, and the absolute magnitude $M$ of the SNIa, in addition to the $\phi_0$, $\phi_\infty$, and $\Gamma$ parameters of the $\phi(z)$ function.</p>
                 <ul>
                     <li>$\mathbf{H_0 = \text{70.36 km/s/Mpc}}$</li>
                     <li>$\mathbf{\Omega_m = \text{0.283}}$</li>
                     <li>$\mathbf{M = \text{-19.34 mag}}$</li>
                 </ul>
-                <p>Le diagramme de Hubble ci-dessous illustre l'excellent accord du modèle avec les données SNIa. Les modules de distance prédits par le modèle fractal dynamique (ligne rouge continue) épousent étroitement les points de données observés (gris), démontrant une compatibilité remarquable sur une large gamme de redshifts.</p>
+                <p>The Hubble Diagram below illustrates the model's excellent agreement with SNIa data. The distance moduli predicted by the dynamic fractal model (solid red line) closely track the observed data points (grey), demonstrating remarkable compatibility over a wide range of redshifts.</p>
                 <img src="../figures/hubble_diagram_comparison.pdf" alt="Hubble Diagram comparing Dynamic Fractal Model, LambdaCDM, and SNIa data." class="main-visual">
-                <p class="image-caption" style="text-align: center; font-style: italic; font-size: 0.9em; color: var(--secondary);">Fig. 3: Diagramme de Hubble montrant le module de distance ($m-M$) vs le décalage vers le rouge ($z$). Les données SNIa synthétisées (gris) sont comparées avec le meilleur ajustement du modèle fractal dynamique (ligne rouge continue) et du modèle $\Lambda$CDM (ligne bleue pointillée).</p>
+                <p class="image-caption" style="text-align: center; font-style: italic; font-size: 0.9em; color: var(--secondary);">Fig. 3: Hubble Diagram showing distance modulus ($m-M$) vs redshift ($z$). Synthesized SNIa data (grey) are compared with the best-fit Dynamic Fractal Model (solid red line) and $\Lambda$CDM (dashed blue line).</p>
 
-                <h3>Analyse des Oscillations Acoustiques Baryoniques (BAO)</h3>
-                <p>Les BAO fournissent des mesures de l'échelle de l'horizon sonore à différentes époques cosmiques. Notre modèle modifie la dépendance de l'horizon sonore par rapport à $\phi(z)$. La modification de l'échelle BAO est directement dérivée des équations de Friedmann modifiées. La table ci-dessous indique les capacités de détection des futures enquêtes BAO, cruciales pour valider plus avant notre modèle :</p>
+                <h3>Baryon Acoustic Oscillation (BAO) Analysis</h3>
+                <p>BAO provide measurements of the sound horizon scale at different cosmic epochs. Our model modifies the sound horizon's dependence on $\phi(z)$. The modification of the BAO scale is directly derived from the modified Friedmann equations. The table below indicates the detection capabilities of future BAO surveys, crucial for further validating our model:</p>
                 <table class="data-table">
-                    <caption>Prédictions BAO et détectabilité</caption>
+                    <caption>BAO Predictions and Detectability</caption>
                     <thead>
                         <tr>
-                            <th>Enquête</th>
-                            <th>Gamme de Redshift</th>
-                            <th>Signification</th>
+                            <th>Survey</th>
+                            <th>Redshift Range</th>
+                            <th>Significance</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -762,18 +789,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         </tr>
                     </tbody>
                 </table>
-                <p>Une nouvelle fonction $f(\phi(z))$ pour l'horizon sonore doit être élaborée et testée de manière approfondie avec les données de DESI, Euclid et SKA2 pour confirmer les prédictions du modèle.</p>
+                <p>A new function $f(\phi(z))$ for the sound horizon needs to be developed and thoroughly tested with data from DESI, Euclid, and SKA2 to confirm the model's predictions.</p>
             </div>
         </div>
 
         ---
 
         <div class="content-section">
-            <h2 class="section-title">Tests Combinés et Qualité de l'Ajustement</h2>
+            <h2 class="section-title">Combined Tests and Fit Quality</h2>
             <div class="section-content">
-                <p>L'ensemble de nos paramètres a été contraint par une minimisation globale du $\chi^2$ combinant les données BAO et Pantheon+ SNIa. Ce test combiné est la pierre angulaire de la validation statistique de notre modèle.</p>
+                <p>All our parameters were constrained by a global $\chi^2$ minimization combining BAO and Pantheon+ SNIa data. This combined test is the cornerstone of our model's statistical validation.</p>
                 
-                <h3>Paramètres du Meilleur Ajustement :</h3>
+                <h3>Best-Fit Parameters:</h3>
                 <ul>
                     <li>$\mathbf{H_0 = \text{70.36 km/s/Mpc}}$</li>
                     <li>$\mathbf{\Omega_m = \text{0.283}}$</li>
@@ -783,17 +810,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <li>$\mathbf{M = \text{-19.34 mag}}$</li>
                 </ul>
 
-                <h3>Qualité de l'Ajustement Global :</h3>
-                <p>Les résultats de cette optimisation combinée sont exceptionnels, soulignant la robustesse de notre modèle :</p>
+                <h3>Overall Fit Quality:</h3>
+                <p>The results of this combined optimization are exceptional, highlighting the robustness of our model:</p>
                 <ul>
-                    <li>$\mathbf{\chi^2}$ Combiné Minimum = $\text{1706.74}$</li>
-                    <li>Degrés de Liberté (dof) Totaux = $\text{1701}$</li>
-                    <li>$\mathbf{\chi^2/\text{dof}}$ Combiné = $\text{1.00}$</li>
+                    <li>Minimum Combined $\mathbf{\chi^2} = \text{1706.74}$</li>
+                    <li>Total Degrees of Freedom (dof) = $\text{1701}$</li>
+                    <li>Combined $\mathbf{\chi^2/\text{dof}} = \text{1.00}$</li>
                 </ul>
-                <p>Un rapport $\chi^2/\text{dof}$ de $\text{1.00}$ indique un ajustement statistique quasi parfait, démontrant que le modèle de Cosmologie Fractale Dynamique est hautement compatible avec les observations cosmologiques actuelles. Ce résultat est une preuve solide de la capacité de notre modèle à décrire un large éventail de phénomènes cosmologiques de manière cohérente.</p>
-                <p>Pour un examen complet des incertitudes des paramètres et des matrices de covariance et de corrélation, qui sont essentielles pour comprendre les dégénérescences et la robustesse des contraintes, veuillez consulter l'article scientifique complet disponible sur Zenodo.</p>
+                <p>A $\chi^2/\text{dof}$ ratio of $\text{1.00}$ indicates a nearly perfect statistical fit, demonstrating that the Dynamic Fractal Cosmology model is highly compatible with current cosmological observations. This result is strong evidence of our model's ability to describe a wide range of cosmological phenomena consistently.</p>
+                <p>For a complete examination of parameter uncertainties and covariance/correlation matrices, which are essential for understanding degeneracies and the robustness of constraints, please consult the full scientific paper available on Zenodo.</p>
                 <a href="https://phi1618.space/zenedo" class="cta-button" target="_blank">
-                    Accéder à l'Article Complet sur Zenodo <i class="fas fa-external-link-alt"></i>
+                    Access the Full Research Paper on Zenodo <i class="fas fa-external-link-alt"></i>
                 </a>
             </div>
         </div>
@@ -801,53 +828,74 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         ---
 
         <div class="content-section">
-            <h2 class="section-title">Analyse des Tensions Cosmologiques</h2>
+            <h2 class="section-title">Tests on Large-Scale Structure (LSS)</h2>
             <div class="section-content">
-                <h3>La Tension de Hubble ($H_0$)</h3>
-                <p>La tension de Hubble représente une divergence significative entre les mesures de $H_0$ issues de l'univers primordial (CMB, ex: Planck) et celles de l'univers local (échelles de distance, ex: SNIa). Notre modèle propose une relation théorique :</p>
+                <p>Beyond the background expansion, a robust cosmological model must also accurately describe the growth of cosmic structures. The Dynamic Fractal Cosmology model introduces modifications to the growth rate of matter perturbations, which can be constrained by observations of large-scale structure (LSS).</p>
+
+                <h3>Growth Rate of Structure ($f\sigma_8$)</h3>
+                <p>The growth rate of structure, often parameterized by $f\sigma_8$, measures how density fluctuations evolve over cosmic time. Our model predicts a specific evolution for $f\sigma_8$ that is sensitive to the dynamic fractal dimension $\phi(z)$. This is a critical area for future validation using data from galaxy surveys.</p>
+                <img src="../figures/fsigma8_plot.png" alt="Growth rate of structure (fsigma8) vs redshift for Dynamic Fractal Model compared to LambdaCDM and observational data." class="main-visual">
+                <p class="image-caption" style="text-align: center; font-style: italic; font-size: 0.9em; color: var(--secondary);">Fig. 6: Evolution of $f\sigma_8$ as a function of redshift. The Dynamic Fractal Model (red line) is compared against $\Lambda$CDM (blue dashed line) and various observational data points. *Note: This figure is illustrative; quantitative fit details will be in the full paper.*</p>
+
+                <h3>Galaxy Cluster Abundance</h3>
+                <p>The abundance of galaxy clusters at different redshifts is highly sensitive to cosmological parameters, particularly $\sigma_8$ and $\Omega_m$. Our model's impact on structure formation can be probed by comparing predicted cluster mass functions with observed data from X-ray and optical surveys (e.g., Planck SZ, DES, eROSITA).</p>
+                <p>Preliminary analyses suggest that the dynamic fractal nature could subtly alter the clustering properties of matter. A dedicated $\chi^2$ analysis on these datasets will provide valuable constraints and offer another rigorous test of the model's validity. While a specific $\chi^2/\text{dof}$ for LSS data is still undergoing full analysis, the theoretical framework allows for direct predictions to be tested against upcoming data.</p>
+                <a href="https://phi1618.space/zenedo" class="cta-button" target="_blank">
+                    Learn More About LSS Implications in the Full Paper <i class="fas fa-external-link-alt"></i>
+                </a>
+            </div>
+        </div>
+
+        ---
+
+        <div class="content-section">
+            <h2 class="section-title">Analysis of Cosmological Tensions</h2>
+            <div class="section-content">
+                <h3>The Hubble Tension ($H_0$)</h3>
+                <p>The Hubble tension represents a significant divergence between $H_0$ measurements from the early universe (CMB, e.g., Planck) and those from the local universe (distance ladder, e.g., SNIa). Our model proposes a theoretical relationship:</p>
                 <div class="equation">
                     \[\frac{H_0^{\text{local}}}{H_0^{\text{CMB}}} = \frac{\phi_\infty}{\phi_{\text{eq}}}\]
                 </div>
-                <p>En utilisant nos paramètres optimisés, pour $z_{\text{eq}} \approx 3400$ (recombinaison), $\phi(z_{\text{eq}})$ est très proche de $\phi_\infty$ (car $e^{-\Gamma z_{\text{eq}}} \approx 0$). Ceci implique un ratio proche de 1. Par conséquent, avec la formulation actuelle de $\phi(z)$ et les paramètres obtenus, notre modèle **ne résout pas la tension de Hubble**. Des modifications supplémentaires à la fonction $\phi(z)$ ou l'introduction de nouveaux paramètres pourraient être nécessaires pour combler cet écart. C'est un domaine de recherche actif pour améliorer le modèle.</p>
+                <p>Using our optimized parameters, for $z_{\text{eq}} \approx 3400$ (recombination), $\phi(z_{\text{eq}})$ is very close to $\phi_\infty$ (since $e^{-\Gamma z_{\text{eq}}} \approx 0$). This implies a ratio close to 1. Therefore, with the current $\phi(z)$ formulation and derived parameters, our model **does not resolve the Hubble tension**. Further modifications to the $\phi(z)$ function or the introduction of new parameters might be necessary to fully bridge this gap. This remains an active area of research for refining the model.</p>
                 <img src="../figures/hubble_tension.png" alt="Hubble constant measurements compared to the Fractal Model prediction." class="main-visual">
-                <p class="image-caption" style="text-align: center; font-style: italic; font-size: 0.9em; color: var(--secondary);">Fig. 4: Mesures de la constante de Hubble avec les erreurs à $1\sigma$: Planck (CMB), Freedman et al. (TRGB), et Riess et al. (SNIa). La ligne rouge pointillée représente la prédiction du modèle fractal pour $H_0=\text{70.36 km/s/Mpc}$.</p>
+                <p class="image-caption" style="text-align: center; font-style: italic; font-size: 0.9em; color: var(--secondary);">Fig. 4: Hubble constant measurements with $1\sigma$ errors: Planck (CMB), Freedman et al. (TRGB), and Riess et al. (SNIa). The dashed red line shows the fractal model prediction for $H_0=\text{70.36 km/s/Mpc}$.</p>
 
-                <h3>Anomalies du Spectre de Puissance du CMB</h3>
-                <p>Le spectre de puissance angulaire du Fond Diffus Cosmologique ($D_\ell$) est sensible à la géométrie fractale de l'univers. Notre modèle prédit une dépendance en fonction de l'échelle $\ell$ pour $\phi(\ell)$ :</p>
+                <h3>CMB Power Spectrum Anomalies</h3>
+                <p>The angular power spectrum of the Cosmic Microwave Background ($D_\ell$) is sensitive to the universe's fractal geometry. Our model predicts a scale-dependent $\phi(\ell)$:</p>
                 <div class="equation">
-                    \[D_\ell = A\left[\ell^{-\phi(\ell)} + B(\ell/30)^{-2}\right] \quad \text{avec } \phi(\ell) \equiv \phi(z_\ell)\]
+                    \[D_\ell = A\left[\ell^{-\phi(\ell)} + B(\ell/30)^{-2}\right] \quad \text{with } \phi(\ell) \equiv \phi(z_\ell)\]
                 </div>
-                <p>où $z_\ell \approx 1100(\ell/100)^{-1}$. La nouvelle valeur primordiale $\phi_0 = \text{2.970}$ implique une mise à l'échelle à bas $\ell$ de $\ell^{-\text{2.970}}$. Ce comportement diffère significativement des modèles standards et offre une avenue prometteuse pour adresser les anomalies observées à bas multipôles dans les données de Planck 2018 (par exemple, le déficit de puissance à bas $\ell$). Une analyse directe et quantitative face aux données du CMB est la prochaine étape cruciale.</p>
+                <p>where $z_\ell \approx 1100(\ell/100)^{-1}$. The new primordial value $\phi_0 = \text{2.970}$ implies a low-$\ell$ scaling of $\ell^{-\text{2.970}}$. This behavior significantly deviates from standard models and offers a promising avenue to address observed low-$\ell$ anomalies in Planck 2018 data (e.g., the power deficit at low $\ell$). A direct and quantitative analysis against CMB data is the crucial next step.</p>
                 <img src="../figures/cmb_spectrum.png" alt="CMB spectrum showing fractal corrections compared to LambdaCDM and Planck data." class="main-visual">
-                <p class="image-caption" style="text-align: center; font-style: italic; font-size: 0.9em; color: var(--secondary);">Fig. 5: Spectre du CMB montrant les corrections fractales à $\ell<30$ (bande bleue) comparé au $\Lambda$CDM (ligne pointillée). Les points de données proviennent de Planck 2018. La nouvelle valeur de $\phi_0 = \text{2.970}$ modifie la forme de la correction fractale, nécessitant une nouvelle analyse.</p>
+                <p class="image-caption" style="text-align: center; font-style: italic; font-size: 0.9em; color: var(--secondary);">Fig. 5: CMB spectrum showing fractal corrections at $\ell<30$ (blue band) compared to $\Lambda$CDM (dashed line). Data points from Planck 2018. The new $\phi_0 = \text{2.970}$ changes the fractal correction shape, requiring re-analysis.</p>
             </div>
         </div>
 
         ---
 
         <div class="content-section">
-            <h2 class="section-title">Interprétation Physique du Taux de Transition $\Gamma$</h2>
+            <h2 class="section-title">Physical Interpretation of the Transition Rate $\Gamma$</h2>
             <div class="section-content">
-                <p>Le paramètre $\mathbf{\Gamma = \text{0.655}}$ gouverne le taux de la transition de phase fractale. Il définit une échelle de temps caractéristique pour ce processus :</p>
+                <p>The parameter $\mathbf{\Gamma = \text{0.655}}$ governs the rate of the fractal phase transition. It defines a characteristic timescale for this process:</p>
                 <div class="equation">
                     \[t_{\text{frac}} = \Gamma^{-1}H_0^{-1} \approx \left(\text{0.655}\right)^{-1} \times \left(\text{70.36 km/s/Mpc}\right)^{-1} \approx \text{13.9 Gyr}\]
                 </div>
-                <p>Cette échelle de temps de fractalisation est remarquablement proche de l'âge actuel de l'univers et de l'époque de la domination de l'énergie sombre dans le modèle $\Lambda$CDM. La figure ci-dessous compare l'évolution des densités d'énergie relatives dans notre modèle fractal dynamique (lignes pointillées) et le modèle $\Lambda$CDM standard (lignes continues). La zone ombragée met en évidence la période où la transition de $\phi(z)$ est la plus prononcée. Cette coïncidence temporelle suggère un lien potentiel entre la dynamique de la dimension fractale et les mécanismes sous-jacents à l'accélération cosmique observée. Une exploration plus approfondie de cette connexion est essentielle pour une compréhension complète du modèle.</p>
+                <p>This fractalization timescale is remarkably close to the current age of the universe and the epoch of dark energy domination in the $\Lambda$CDM model. The figure below compares the evolution of relative energy densities in our dynamic fractal model (dashed lines) and the standard $\Lambda$CDM model (solid lines). The shaded band highlights the period when the $\phi(z)$ transition is most pronounced. This temporal coincidence suggests a potential link between the dynamics of the fractal dimension and the underlying mechanisms of observed cosmic acceleration. Further exploration of this connection is essential for a complete understanding of the model.</p>
                 <img src="../figures/energy_density_phi_transition.png" alt="Evolution of relative energy density for Dynamic Fractal Model and LambdaCDM." class="main-visual">
-                <p class="image-caption" style="text-align: center; font-style: italic; font-size: 0.9em; color: var(--secondary);">Fig. 6: Évolution de la densité d'énergie relative pour le modèle fractal dynamique (lignes pointillées) et le $\Lambda$CDM (lignes continues). La bande ombrée met en évidence la zone de transition de $\phi(z)$.</p>
+                <p class="image-caption" style="text-align: center; font-style: italic; font-size: 0.9em; color: var(--secondary);">Fig. 7: Evolution of relative energy density for the Dynamic Fractal Model (dashed lines) and $\Lambda$CDM (solid lines). The shaded band highlights the $\phi(z)$ transition zone.</p>
             </div>
         </div>
 
         ---
 
         <div class="content-section">
-            <h2 class="section-title">Conclusion et Perspectives</h2>
+            <h2 class="section-title">Conclusion and Future Outlook</h2>
             <div class="section-content">
-                <p>Le modèle de Cosmologie Fractale Dynamique, avec ses paramètres optimisés ($H_0 = \text{70.36}$ km/s/Mpc, $\Omega_m = \text{0.283}$, $\phi_0=\text{2.970}$, $\phi_\infty=\text{1.002}$, $\Gamma=\text{0.655}$, et $M=\text{-19.34}$ mag), offre un **ajustement exceptionnel** aux données combinées BAO et Pantheon+ SNIa, avec un $\chi^2/\text{dof} = \text{1.00}$. Ce résultat démontre la grande capacité du modèle à décrire l'évolution de l'univers.</p>
-                <p>Cependant, la nouvelle valeur optimisée de $\mathbf{\phi_0 = \text{2.970}}$ soulève des questions importantes et nécessite une nouvelle base théorique pour ses interprétations en gravité quantique et en cosmologie primordiale. De plus, bien que notre modèle présente des solutions élégantes pour les anomalies du CMB et offre un cadre dynamique unique, il **ne parvient pas, dans sa forme actuelle, à résoudre la tension de Hubble**. Des recherches futures devront explorer des extensions ou des ajustements à la fonction $\phi(z)$ pour aborder pleinement cette énigme.</p>
-                <p>Les prochaines étapes incluent une comparaison quantitative rigoureuse du spectre CMB avec les données de Planck et une dérivation plus poussée de la modification de l'échelle BAO pour les futures campagnes observationnelles. Nous encourageons la communauté scientifique à examiner notre travail détaillé et à contribuer à l'exploration de cette nouvelle voie passionnante en cosmologie.</p>
+                <p>The Dynamic Fractal Cosmology model, with its optimized parameters ($H_0 = \text{70.36}$ km/s/Mpc, $\Omega_m = \text{0.283}$, $\phi_0=\text{2.970}$, $\phi_\infty=\text{1.002}$, $\Gamma=\text{0.655}$, and $M=\text{-19.34}$ mag), provides an **exceptional fit** to the combined BAO and Pantheon+ SNIa data, yielding a $\chi^2/\text{dof} = \text{1.00}$. This result demonstrates the model's strong capability to describe the universe's expansion.</p>
+                <p>However, the new optimized value of $\mathbf{\phi_0 = \text{2.970}}$ raises important questions and necessitates a novel theoretical basis for its interpretations in quantum gravity and primordial cosmology. Furthermore, while our model presents elegant solutions for CMB anomalies and offers a unique dynamic framework, it **does not, in its current form, resolve the Hubble tension**. Future research will need to explore extensions or adjustments to the $\phi(z)$ function to fully address this enigma.</p>
+                <p>Next steps include a rigorous quantitative comparison of the CMB spectrum against Planck data and further derivation of the BAO scale modification for upcoming observational campaigns. We also emphasize the importance of conducting detailed tests against large-scale structure data, such as galaxy cluster abundances and redshift-space distortions, to further constrain and validate the model. We invite the scientific community to review our detailed work and contribute to the exploration of this exciting new avenue in cosmology.</p>
                 <a href="https://phi1618.space/zenedo" class="cta-button" target="_blank">
-                    Accéder à l'Article Complet sur Zenodo <i class="fas fa-external-link-alt"></i>
+                    Access the Full Research Paper on Zenodo <i class="fas fa-external-link-alt"></i>
                 </a>
             </div>
         </div>
@@ -875,14 +923,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="footer-content">
             <div class="research-links">
                 <a href="https://phi1618.space/zenedo" class="footer-btn doi-link" target="_blank">
-                    <i class="fas fa-file-alt"></i> Voir l'article complet
+                    <i class="fas fa-file-alt"></i> View Full Paper
                 </a>
-                <a href="../index.html" class="footer-btn"><i class="fas fa-home"></i> Retour à l'accueil</a>
+                <a href="../index.html" class="footer-btn"><i class="fas fa-home"></i> Back to Home</a>
                 <a href="https://phi1618.space/zenedo" class="footer-btn doi-link" target="_blank">
-                    <i class="ai ai-doi"></i> Voir sur Zenodo
+                    <i class="ai ai-doi"></i> View on Zenodo
                 </a>
             </div>
-            <p class="copyright">&copy; <script>document.write(new Date().getFullYear())</script> Sylvain Herbin | Recherche en Cosmologie Fractale Dynamique</p>
+            <p class="copyright">&copy; <script>document.write(new Date().getFullYear())</script> Sylvain Herbin | Dynamic Fractal Cosmology Research</p>
         </div>
     </footer>
 

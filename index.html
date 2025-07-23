@@ -25,7 +25,7 @@
         MathJax = {
             tex: {
                 inlineMath: [['$', '$'], ['\\(', '\\)']],
-                displayMath: [['\\[', '\\]']], // CORRECTED: Now uses \[ \] for block equations
+                displayMath: [['\\[', '\\]']],
                 processEscapes: true,
                 processEnvironments: true
             },
@@ -72,7 +72,7 @@
 
         html {
             scroll-behavior: smooth;
-            overflow-x: hidden;
+            overflow-x: hidden; /* Prevent horizontal scroll from elements overflowing */
         }
 
         body {
@@ -81,7 +81,7 @@
             color: var(--dark);
             background-color: var(--light);
             padding-top: 100px;
-            overflow-x: hidden;
+            overflow-x: hidden; /* Ensure no horizontal scroll on body */
             background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
         }
 
@@ -164,9 +164,9 @@
 
         /* --- Main Content --- */
         .container {
-            max-width: 1200px;
+            max-width: 1200px; /* Still a good max-width for large screens */
             margin: 0 auto;
-            padding: 40px 5%;
+            padding: 40px 20px; /* Adjusted fixed padding instead of percentage */
         }
 
         .hero-section {
@@ -222,16 +222,17 @@
         .content-section {
             background: white;
             border-radius: 16px;
-            padding: 40px;
+            padding: 40px; /* Consistent padding */
             margin-bottom: 50px;
             box-shadow: 0 12px 40px rgba(0,0,0,0.08);
             transition: all 0.4s ease;
             border-top: 5px solid var(--gold);
             position: relative;
-            overflow: hidden;
+            overflow: hidden; /* Keep hidden to contain internal overflows without affecting layout */
             display: flex;
             flex-direction: column;
             align-items: center; /* Center content horizontally */
+            text-align: center; /* Center text within section */
         }
 
         .content-section::before {
@@ -258,17 +259,33 @@
             align-items: center;
             position: relative;
             padding-left: 40px;
+            text-align: left; /* Keep title aligned left within its flex container */
+            width: 100%; /* Allow title to take full width of parent */
+            justify-content: center; /* Center the title horizontally */
         }
 
         .section-title::before {
             content: "";
             position: absolute;
-            left: 0;
+            left: 0; /* Adjust this to control left spacing for the bar */
             top: 50%;
             transform: translateY(-50%);
             width: 30px;
             height: 3px;
             background: var(--gold);
+        }
+        /* Override for titles inside content-section to adjust positioning if needed */
+        .content-section .section-title {
+            justify-content: flex-start; /* Align title left within the content-section */
+            padding-left: 0; /* Remove left padding from the title itself */
+        }
+        .content-section .section-title::before {
+             left: -40px; /* Adjust this to move the bar outside the text, relative to the content-section padding */
+        }
+
+
+        .section-content {
+            width: 100%; /* Ensure content takes full available width */
         }
 
         .section-content p {
@@ -278,11 +295,13 @@
             max-width: 900px; /* Constrain text width for readability */
             margin-left: auto;
             margin-right: auto;
+            padding: 0 15px; /* Add horizontal padding to text paragraphs */
+            text-align: left; /* Align text left within its constrained width */
         }
 
         .section-content .equation {
             background: linear-gradient(to right, rgba(62, 109, 156, 0.03), rgba(212, 175, 55, 0.08));
-            padding: 30px;
+            padding: 30px 15px; /* Added padding to ensure text/equation inside doesn't hit edges */
             border-radius: 12px;
             margin: 30px auto;
             font-style: italic;
@@ -290,14 +309,14 @@
             line-height: 1.8;
             border-left: 4px solid var(--gold);
             position: relative;
-            overflow-x: auto;
-            max-width: 900px; /* Match text width */
-            text-align: center;
+            overflow-x: auto; /* Allow horizontal scroll for wide equations */
+            max-width: 900px; /* Match text width for consistency */
+            text-align: center; /* Center the equation itself */
         }
 
         /* Image specific styles */
         .main-visual {
-            width: 100%;
+            width: calc(100% - 30px); /* Take full width minus padding for small screens */
             max-width: 900px; /* Constrain image width */
             height: auto;
             border-radius: 12px;
@@ -349,6 +368,7 @@
             margin-top: 50px;
             box-shadow: inset 0 0 15px rgba(0,0,0,0.05);
             border-left: 5px solid var(--accent);
+            text-align: left; /* Keep glossary content left aligned */
         }
 
         .glossary-section h2 {
@@ -370,6 +390,9 @@
         .glossary-list {
             list-style: none;
             padding: 0;
+            max-width: 900px; /* Constrain glossary list width for readability */
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .glossary-list dt {
@@ -563,7 +586,7 @@
             }
 
             .container {
-                padding: 20px;
+                padding: 20px; /* More generous padding on small screens */
             }
 
             .hero-title {
@@ -580,13 +603,12 @@
             }
             .section-title {
                 font-size: 1.6rem;
-                padding-left: 30px;
+                /* No specific padding-left here, it's handled by .content-section .section-title::before */
             }
-            .section-title::before {
-                width: 20px;
-            }
-            .section-content p, .section-content .equation {
+            .section-content p,
+            .section-content .equation {
                 font-size: 1rem;
+                padding: 0 10px; /* Slightly less padding for smaller screens */
             }
 
             .social-link {
@@ -608,6 +630,9 @@
                 font-size: 0.95rem;
                 margin-left: 20px;
             }
+            .main-visual {
+                width: calc(100% - 20px); /* Adjust for 20px padding of container */
+            }
         }
 
         @media (max-width: 480px) {
@@ -622,6 +647,19 @@
             .footer-btn {
                 width: 100%;
                 max-width: 300px;
+            }
+            .content-section {
+                padding: 20px; /* Even less padding for very small screens */
+            }
+            .section-title::before {
+                left: -20px; /* Adjust bar position for very small screens */
+            }
+            .section-content p,
+            .section-content .equation {
+                padding: 0; /* Remove padding for very small screens if necessary */
+            }
+            .main-visual {
+                width: 100%; /* Maximize image width on very small screens */
             }
         }
     </style>

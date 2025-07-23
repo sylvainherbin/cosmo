@@ -2,33 +2,30 @@
 <html lang="en">
 <head>
 
-<!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-PCXPDQHN');</script>
-<!-- End Google Tag Manager -->
-
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dynamic Fractal Cosmology: A New Look at the Universe</title>
+    <title>Dynamic Fractal Cosmology</title>
 
-    <meta name="description" content="Explore Dynamic Fractal Cosmology, a new model explaining the universe's expansion, Hubble Tension, and CMB anomalies with an evolving golden ratio. Accessible explanation for all.">
-    <meta name="keywords" content="cosmology, fractal universe, Hubble Tension, CMB anomaly, golden ratio, new universe theory, science explained">
+    <meta name="description" content="Explore a groundbreaking theory of Dynamic Fractal Cosmology that addresses the Hubble Tension and CMB anomalies through a dynamic golden ratio.">
+    <meta name="keywords" content="cosmology, fractal universe, Hubble Tension, CMB anomaly, golden ratio, new universe theory">
     <meta name="author" content="Sylvain Herbin">
 
-   <meta property="og:type" content="website">
-<meta property="og:url" content="https://sylvainherbin.github.io/cosmo/">
-<meta property="og:title" content="Dynamic Fractal Cosmology: A New Look at the Universe">
-<meta property="og:description" content="Explore Dynamic Fractal Cosmology, a new model explaining the universe's expansion, Hubble Tension, and CMB anomalies with an evolving golden ratio. Accessible explanation for all.">
-<meta property="og:image" content="https://sylvainherbin.github.io/cosmo/figures/fractal_cosmology.JPG">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sylvainherbin.github.io/cosmo/index.html">
+    <meta property="og:title" content="Dynamic Fractal Cosmology">
+    <meta property="og:description" content="Explore a groundbreaking theory of Dynamic Fractal Cosmology that addresses the Hubble Tension and CMB anomalies through a dynamic golden ratio.">
+    <meta property="og:image" content="https://sylvainherbin.github.io/cosmo/figures/fractal_cosmology.JPG">
 
-<meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:url" content="https://sylvainherbin.github.io/cosmo/"> <meta property="twitter:title" content="Dynamic Fractal Cosmology: A New Look at the Universe">
-<meta property="twitter:description" content="Explore Dynamic Fractal Cosmology, a new model explaining the universe's expansion, Hubble Tension, and CMB anomalies with an evolving golden ratio. Accessible explanation for all.">
-<meta property="twitter:image" content="https://sylvainherbin.github.io/cosmo/figures/fractal_cosmology.JPG">
-
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://sylvainherbin.github.io/cosmo/index.html">
+    <meta property="twitter:title" content="Dynamic Fractal Cosmology">
+    <meta property="twitter:description" content="Explore a groundbreaking theory of Dynamic Fractal Cosmology that addresses the Hubble Tension and CMB anomalies through a dynamic golden ratio.">
+    <meta property="twitter:image" content="https://sylvainherbin.github.io/cosmo/figures/fractal_cosmology.JPG">
 
     <script>
         MathJax = {
@@ -51,8 +48,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Source+Sans+Pro:wght@300;400;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
-
-   
 
     <style>
         /* --- Variables and Reset --- */
@@ -291,7 +286,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             width: 100%; /* Ensure content takes full available width */
         }
 
-        .section-content p {
+        .section-content p, .section-content ul, .section-content ol {
             font-size: 1.15rem;
             line-height: 1.8;
             margin-bottom: 20px;
@@ -300,6 +295,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             margin-right: auto;
             padding: 0 15px; /* Add horizontal padding to text paragraphs */
             text-align: left; /* Align text left within its constrained width */
+        }
+        .section-content ul, .section-content ol {
+            padding-left: 35px; /* Indent lists */
+        }
+        .section-content li {
+            margin-bottom: 10px;
         }
 
         .section-content .equation {
@@ -317,6 +318,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             text-align: center; /* Center the equation itself */
         }
 
+        .section-content .equation pre {
+            white-space: pre-wrap; /* Ensure text wraps within pre */
+            word-wrap: break-word; /* Break long words */
+        }
+
+
         /* Image specific styles */
         .main-visual {
             width: calc(100% - 30px); /* Take full width minus padding for small screens */
@@ -331,8 +338,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             margin-left: auto;
             margin-right: auto;
         }
+        
+        .section-content img { /* For images within content sections */
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 25px auto;
+            display: block;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
 
-        /* CTA button for scientists page */
+        /* Call-to-action button */
         .cta-button {
             display: inline-flex;
             align-items: center;
@@ -363,69 +379,104 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             font-size: 1.3rem;
         }
 
-        /* Glossaire Section */
-        .glossary-section {
-            background: var(--gray-light);
-            border-radius: 16px;
-            padding: 40px;
-            margin-top: 50px;
-            box-shadow: inset 0 0 15px rgba(0,0,0,0.05);
-            border-left: 5px solid var(--accent);
-            text-align: left; /* Keep glossary content left aligned */
+        /* Scientific tables */
+        .data-table {
+            width: 100%;
+            max-width: 900px;
+            margin: 30px auto;
+            border-collapse: collapse;
+            font-size: 1rem;
+            text-align: left;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            overflow: hidden; /* Ensures rounded corners on table elements */
         }
 
-        .glossary-section h2 {
-            font-family: 'Montserrat', sans-serif;
-            color: var(--primary);
-            font-size: 2rem;
-            margin-bottom: 25px;
-            border-bottom: 2px solid var(--accent);
-            padding-bottom: 15px;
-            display: flex;
-            align-items: center;
+        .data-table th, .data-table td {
+            padding: 15px 20px;
+            border: 1px solid var(--gray-light);
         }
 
-        .glossary-section h2 i {
-            margin-right: 15px;
-            color: var(--accent);
+        .data-table thead {
+            background-color: var(--primary);
+            color: white;
         }
 
-        .glossary-list {
-            list-style: none;
-            padding: 0;
-            max-width: 900px; /* Constrain glossary list width for readability */
-            margin-left: auto;
-            margin-right: auto;
+        .data-table tbody tr:nth-child(even) {
+            background-color: var(--gray-light);
         }
 
-        .glossary-list dt {
+        .data-table tbody tr:hover {
+            background-color: rgba(var(--gold), 0.1);
+            transform: scale(1.01);
+            transition: all 0.2s ease-in-out;
+        }
+
+        .data-table caption {
             font-family: 'Montserrat', sans-serif;
             font-weight: 600;
+            font-size: 1.2rem;
             color: var(--secondary);
-            font-size: 1.25rem;
-            margin-top: 25px;
-            margin-bottom: 8px;
-            position: relative;
-            padding-left: 25px;
-        }
-
-        .glossary-list dt::before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: var(--gold);
-            font-size: 1.5rem;
-            top: -2px;
-        }
-
-        .glossary-list dd {
-            font-size: 1.1rem;
-            line-height: 1.7;
-            margin-left: 25px;
             margin-bottom: 15px;
+        }
+
+        /* --- Homepage Equation Container --- */
+        .equation-container {
+            background: linear-gradient(145deg, var(--gold-light), var(--gold)); /* Gold gradient for background */
+            border-left: 4px solid var(--primary); /* Primary color border */
+            border-radius: 16px; /* Slightly larger radius for prominence */
+            padding: 40px; /* More padding */
+            margin: 60px auto; /* More margin */
+            max-width: 900px; /* Consistent with other content sections */
+            box-shadow: 0 15px 50px rgba(212, 175, 55, 0.35); /* More pronounced gold shadow */
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border-top: 5px solid var(--primary); /* Consistent with scientists.html sections */
+        }
+
+        .equation-container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--primary), var(--secondary)); /* Primary to secondary gradient on top bar */
+        }
+
+        .equation-container:hover {
+            transform: translateY(-12px) scale(1.005);
+            box-shadow: 0 25px 60px rgba(212, 175, 55, 0.45);
+        }
+
+        .equation-container .equation-intro,
+        .equation-container .equation-explanation {
+            font-size: 1.15em; /* Match general text size */
+            line-height: 1.8;
+            color: var(--dark); /* Keep text readable */
+            margin-bottom: 25px; /* More spacing */
+            text-align: left;
+            max-width: 90%; /* Keep text within reasonable width */
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 15px; /* Inner padding */
+        }
+
+        .equation-container .equation-explanation {
+            margin-top: 25px;
+            margin-bottom: 0;
+            font-style: italic;
+            color: var(--primary); /* Stronger color for emphasis */
+            font-weight: 500;
+        }
+
+        .equation-container .equation {
+            font-size: 1.8em; /* Make the equation itself larger for impact */
+            padding: 15px 0;
+            font-style: normal;
             color: var(--dark);
         }
-
 
         /* --- Social Icons --- */
         .social-container {
@@ -606,14 +657,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             }
             .section-title {
                 font-size: 1.6rem;
-                /* No specific padding-left here, it's handled by .content-section .section-title::before */
             }
             .section-content p,
-            .section-content .equation {
+            .section-content .equation,
+            .section-content ul,
+            .section-content ol {
                 font-size: 1rem;
-                padding: 0 10px; /* Slightly less padding for smaller screens */
+                padding: 0 10px;
             }
-
             .social-link {
                 font-size: 2.2rem;
                 width: 65px;
@@ -625,16 +676,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 font-size: 1rem;
                 padding: 10px 20px;
             }
-            .glossary-list dt {
-                font-size: 1.1rem;
-                padding-left: 20px;
+            .equation-container {
+                padding: 25px;
             }
-            .glossary-list dd {
-                font-size: 0.95rem;
-                margin-left: 20px;
+            .equation-container .equation-intro,
+            .equation-container .equation-explanation {
+                font-size: 1em;
+                padding: 0 10px;
             }
-            .main-visual {
-                width: calc(100% - 20px); /* Adjust for 20px padding of container */
+            .equation-container .equation {
+                font-size: 1.5em;
             }
         }
 
@@ -652,26 +703,34 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 max-width: 300px;
             }
             .content-section {
-                padding: 20px; /* Even less padding for very small screens */
+                padding: 20px;
             }
             .section-title::before {
-                left: -20px; /* Adjust bar position for very small screens */
+                left: -20px;
             }
-            .section-content p,
-            .section-content .equation {
-                padding: 0; /* Remove padding for very small screens if necessary */
+            .content-section p,
+            .content-section .equation,
+            .content-section ul,
+            .content-section ol {
+                padding: 0;
             }
-            .main-visual {
-                width: 100%; /* Maximize image width on very small screens */
+            .equation-container {
+                padding: 20px;
+            }
+            .equation-container .equation-intro,
+            .equation-container .equation-explanation {
+                padding: 0;
+            }
+            .equation-container .equation {
+                font-size: 1.3em;
             }
         }
     </style>
 </head>
-<body> <!-- Google Tag Manager (noscript) -->
+<body>
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PCXPDQHN"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-    <header>
+<header>
         <a href="index.html" class="site-title"><i class="fas fa-atom"></i>Sylvain Herbin</a>
         <nav class="main-nav">
             <a href="index.html" class="nav-link active"><i class="fas fa-home"></i> Home</a>
@@ -679,69 +738,58 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <a href="https://phi1618.space/zenedo" class="nav-link" target="_blank">
                 <i class="fas fa-file-alt"></i> Full Paper
             </a>
-            </nav>
+        </nav>
     </header>
 
     <main class="container">
         <div class="hero-section">
-            <h1 class="hero-title">Dynamic Fractal Cosmology</h1>
-            <div class="hero-subtitle">A Fibonacci Phase Transition Model for the Universe</div>
+            <h1 class="hero-title">Unveiling the Universe's True Nature</h1>
+            <div class="hero-subtitle">A Dynamic Fractal Cosmology Model that Resolves Cosmic Puzzles</div>
             <div class="hero-divider"></div>
+            <img src="figures/fractal_cosmos_banner.JPG" alt="Fractal Universe Banner" class="main-visual">
+            <a href="scientists/scientists.html" class="cta-button">
+                Explore the Science <i class="fas fa-arrow-right"></i>
+            </a>
         </div>
 
         <div class="content-section">
-            <h2 class="section-title">Beyond the Standard Model: Unveiling a Fractal Universe</h2>
+            <h2 class="section-title">A New Paradigm in Cosmology</h2>
             <div class="section-content">
-                <p>Have you ever wondered about the true nature of our universe? For decades, the $\Lambda$CDM model has been our best description, but recent observations have revealed puzzling discrepancies, hinting that there might be more to the cosmic story. What if the very fabric of space isn't as smooth as we thought, but holds a hidden, evolving fractal dimension?</p>
-
-                <p>Introducing **Dynamic Fractal Cosmology**, a groundbreaking new model that proposes a universe where the golden ratio, $\phi$ (Phi), isn't just a mathematical curiosity, but a fundamental property that evolves over cosmic time. This innovative approach offers elegant solutions to some of cosmology's most pressing mysteries: the **Hubble Tension**, which highlights a disagreement in the universe's expansion rate, and puzzling **anomalies in the Cosmic Microwave Background (CMB)**, the faint echo of the Big Bang.</p>
-
-                <img src="figures/fractal_cosmology.JPG" alt="The Evolving Cosmic Tapestry: A visual representation of Dynamic Fractal Cosmology showing the evolution of the golden ratio Phi influencing the fractal structure of the universe and resolving cosmic tensions." class="main-visual">
-
-                <p>Our research leverages a vast array of cosmic data—from distant exploding stars (supernovae) and the large-scale distribution of galaxies to the ancient light of the CMB. By analyzing these cosmic signals with our dynamic fractal framework, we've achieved an unprecedented fit to the observational evidence, providing a cohesive picture from the early universe's first moments to today. This model suggests that the universe's fractal nature, driven by the evolution of $\phi(z)$, influences everything from how galaxies cluster to the precise rate of cosmic expansion. It's a universe that truly evolves, revealing its intricate structure over billions of years.</p>
-
-                <p>At its heart, our model describes how the universe's inherent "golden ratio" property shifts and changes as it expands:</p>
-
-                <div class="equation">
-                    \[\text{Universe Evolution} = \text{Fractal Geometry} + \text{Cosmic Expansion}\]
-                </div>
-
-                <p>This simple equation encapsulates a profound new understanding: that the universe isn't static in its underlying properties, but dynamically unfolds its fractal complexity, offering a fresh perspective on its past, present, and future.</p>
-
-                <a href="scientists/scientists.html" class="cta-button">
-                    For Scientists: Dive Deeper into the Model <i class="fas fa-arrow-right"></i>
-                </a>
+                <p>For decades, the standard cosmological model, $\Lambda$CDM, has provided an excellent framework for understanding the universe. However, recent precise measurements have revealed significant discrepancies, known as "cosmic tensions," challenging our fundamental understanding of the cosmos.</p>
+                <p>Dynamic Fractal Cosmology offers a revolutionary perspective. By introducing a dynamic fractal dimension that evolves with the universe, this model provides a novel framework to address these tensions and opens up new avenues for exploring the universe's origin and evolution. We propose that the universe's structure is fundamentally fractal, governed by the golden ratio, which dynamically changes over cosmic time.</p>
+                <img src="figures/tension_bubbles.JPG" alt="Cosmic Tensions Illustration" class="section-content-image">
             </div>
         </div>
 
-        <div class="glossary-section">
-            <h2 class="section-title"><i class="fas fa-book"></i> Key Concepts & Glossary</h2>
-            <dl class="glossary-list">
-                <dt>The Golden Ratio ($\phi$)</dt>
-                <dd>An irrational number approximately equal to 1.618, often found in nature and art, where the ratio of two quantities is the same as the ratio of their sum to the larger of the two quantities. In our model, it represents a fundamental, evolving dimension of the universe's structure.</dd>
+        <div class="equation-container">
+            <p class="equation-intro">At the heart of Dynamic Fractal Cosmology is the evolution of the universe's **fractal dimension**, $\phi$, which changes with redshift ($z$) according to:</p>
+            <div class="equation">
+                \[ \phi(z) = \phi_{\infty} - (\phi_{\infty} - \phi_0)e^{-\Gamma z} \]
+            </div>
+            <p class="equation-explanation">This equation describes a **cosmic phase transition**, where the universe's fundamental fractal nature shifts from a primordial state ($\phi_0$) to its current form ($\phi_{\infty}$) over cosmic time. This dynamic behavior offers a fresh perspective on the universe's expansion and structure formation, potentially resolving long-standing cosmic mysteries.</p>
+        </div>
 
-                <dt>Hubble Tension</dt>
-                <dd>A significant disagreement between measurements of the universe's expansion rate ($H_0$) derived from early-universe data (like the CMB) and those from the late, local universe (like supernovae). Our model offers a solution to this puzzling discrepancy.</dd>
+        <div class="content-section">
+            <h2 class="section-title">Addressing Cosmic Tensions</h2>
+            <div class="section-content">
+                <p>Our model specifically tackles two of the most pressing issues in modern cosmology:</p>
+                <h3>The Hubble Tension</h3>
+                <p>There's a significant disagreement in the measured value of the Hubble constant ($H_0$), which describes the universe's expansion rate. Early-universe measurements (from the Cosmic Microwave Background) conflict with local-universe measurements (from supernovae). Our dynamic fractal approach offers a unique way to reconcile these values by proposing a scale-dependent expansion rate.</p>
+                <h3>CMB Anomalies</h3>
+                <p>Subtle anomalies in the Cosmic Microwave Background (CMB) radiation, particularly at large angular scales (low-$\ell$ multipoles), remain unexplained by the standard model. Our fractal geometry naturally introduces corrections that align with these observed patterns, providing a more complete picture of the early universe.</p>
+                <img src="figures/hubble_cmb_tensions.JPG" alt="Hubble and CMB Tensions" class="section-content-image">
+            </div>
+        </div>
 
-                <dt>Cosmic Microwave Background (CMB)</dt>
-                <dd>The oldest light in the universe, an echo of the Big Bang, providing a snapshot of the universe when it was only about 380,000 years old. Anomalies observed in its large-scale patterns are addressed by Dynamic Fractal Cosmology.</dd>
-
-                <dt>$\Lambda$CDM Model</dt>
-                <dd>The standard model of cosmology, which describes the universe as being composed of dark energy ($\Lambda$), cold dark matter (CDM), and ordinary matter. While successful, it faces challenges like the Hubble Tension and CMB anomalies that our model aims to resolve.</dd>
-
-                <dt>Fractal Dimension</dt>
-                <dd>A statistical quantity that describes how completely a fractal pattern or structure fills space as its scale changes. In our model, the universe's fractal dimension ($\phi(z)$) is not constant but evolves with cosmic expansion.</dd>
-
-                <dt>Redshift ($z$)</dt>
-                <dd>A measure of how much the light from a distant object has been "stretched" by the expansion of the universe. Higher redshift means greater distance and further back in cosmic time.</dd>
-
-                <dt>Supernovae Type Ia</dt>
-                <dd>Exploding stars of a specific type that have a consistent peak luminosity, making them "standard candles" for measuring cosmic distances and the universe's expansion rate.</dd>
-
-                <dt>Galaxy Clusters Mass Functions</dt>
-                <dd>A measurement of the number of galaxy clusters per unit volume at different masses and redshifts. Our model can explain the observed deficit of massive clusters at certain redshifts, which is a challenge for the standard model.</dd>
-
-            </dl>
+        <div class="content-section">
+            <h2 class="section-title">Explore the Research</h2>
+            <div class="section-content">
+                <p>Our research delves deep into the mathematical framework and observational tests of Dynamic Fractal Cosmology. We utilize extensive datasets from Baryon Acoustic Oscillations (BAO) and Type Ia Supernovae (SNIa) to constrain our model's parameters, demonstrating an exceptional fit to current cosmological data.</p>
+                <p>For a detailed analysis, including equations, optimized parameters, statistical fits ($\chi^2/\text{dof}$), and a full discussion of implications, we invite you to explore our comprehensive scientific paper. Join us in this exciting journey to unlock the universe's secrets!</p>
+                <a href="https://phi1618.space/zenedo" class="cta-button" target="_blank">
+                    Read the Full Scientific Paper <i class="fas fa-external-link-alt"></i>
+                </a>
+            </div>
         </div>
 
         <div class="social-container">

@@ -3,30 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sylvain Herbin | Dynamic Fractal Cosmology</title>
-    
-    <script>
+    <title>Dynamic Fractal Cosmology: A New Look at the Universe</title>
+
+    <meta name="description" content="Explore Dynamic Fractal Cosmology, a new model explaining the universe's expansion, Hubble Tension, and CMB anomalies with an evolving golden ratio. Accessible explanation for all.">
+    <meta name="keywords" content="cosmology, fractal universe, Hubble Tension, CMB anomaly, golden ratio, new universe theory, science explained">
+    <meta name="author" content="Sylvain Herbin">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourusername.github.io/yourrepository/"> <meta property="og:title" content="Dynamic Fractal Cosmology: A New Look at the Universe">
+    <meta property="og:description" content="Explore Dynamic Fractal Cosmology, a new model explaining the universe's expansion, Hubble Tension, and CMB anomalies with an evolving golden ratio. Accessible explanation for all.">
+    <meta property="og:image" content="https://yourusername.github.io/yourrepository/figures/fractal_cosmology.JPG"> <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://yourusername.github.io/yourrepository/"> <meta property="twitter:title" content="Dynamic Fractal Cosmology: A New Look at the Universe">
+    <meta property="twitter:description" content="Explore Dynamic Fractal Cosmology, a new model explaining the universe's expansion, Hubble Tension, and CMB anomalies with an evolving golden ratio. Accessible explanation for all.">
+    <meta property="twitter:image" content="https://yourusername.github.io/yourrepository/figures/fractal_cosmology.JPG"> <script>
         MathJax = {
             tex: {
-                inlineMath: [['$', '$'], ['\\(', '\\)']], // Keep for potential future use if needed, but not used in current text
-                displayMath: [['\\[', '\\]']], // Only these delimiters will be actively used for block equations
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']],
                 processEscapes: true,
                 processEnvironments: true
             },
             options: {
-                ignoreHtmlClass: 'tex2jax_ignore', // Ignore specific classes
-                processHtmlClass: 'tex2jax_process' // Process specific classes (optional, not used here)
+                ignoreHtmlClass: 'tex2jax_ignore',
+                processHtmlClass: 'tex2jax_process'
             }
         };
     </script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-    
+
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Source+Sans+Pro:wght@300;400;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
-    
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script> <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-XXXXXXXXXX'); // REMPLACEZ G-XXXXXXXXXX PAR VOTRE ID GA4
+    </script>
+
     <style>
         /* --- Variables and Reset --- */
         :root {
@@ -194,7 +212,8 @@
             opacity: 0.3;
         }
 
-        .research-card {
+        /* New styles for the main content */
+        .content-section {
             background: white;
             border-radius: 16px;
             padding: 40px;
@@ -204,9 +223,12 @@
             border-top: 5px solid var(--gold);
             position: relative;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center content horizontally */
         }
 
-        .research-card::before {
+        .content-section::before {
             content: "";
             position: absolute;
             top: 0;
@@ -216,12 +238,12 @@
             background: linear-gradient(to right, var(--gold), var(--accent));
         }
 
-        .research-card:hover {
+        .content-section:hover {
             transform: translateY(-10px);
             box-shadow: 0 20px 50px rgba(0,0,0,0.15);
         }
 
-        .card-title {
+        .section-title {
             font-family: 'Montserrat', sans-serif;
             color: var(--primary);
             font-size: 2rem;
@@ -232,7 +254,7 @@
             padding-left: 40px;
         }
 
-        .card-title::before {
+        .section-title::before {
             content: "";
             position: absolute;
             left: 0;
@@ -243,134 +265,135 @@
             background: var(--gold);
         }
 
-        /* Math container for block equations only */
-        .math-container {
+        .section-content p {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            max-width: 900px; /* Constrain text width for readability */
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .section-content .equation {
             background: linear-gradient(to right, rgba(62, 109, 156, 0.03), rgba(212, 175, 55, 0.08));
             padding: 30px;
             border-radius: 12px;
-            margin: 30px 0;
+            margin: 30px auto;
             font-style: italic;
             font-size: 1.2rem;
             line-height: 1.8;
             border-left: 4px solid var(--gold);
             position: relative;
-            overflow-x: auto; /* Ensures horizontal scroll for wide equations */
-        }
-
-        .math-container p {
-            margin-bottom: 20px;
-            position: relative;
-            z-index: 2;
-        }
-        /* Ensure MathJax block equations are correctly rendered within this container */
-        .math-container .MathJax {
+            overflow-x: auto;
+            max-width: 900px; /* Match text width */
             text-align: center;
-            padding: 0 10px; /* Add some padding if needed for overflow */
         }
 
+        /* Image specific styles */
+        .main-visual {
+            width: 100%;
+            max-width: 900px; /* Constrain image width */
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            margin-top: 30px;
+            margin-bottom: 40px;
+            border: 2px solid var(--gold-light);
+            display: block; /* Ensure it behaves as a block element for centering */
+            margin-left: auto;
+            margin-right: auto;
+        }
 
-        .doi-badge {
-            display: inline-block;
-            background: var(--secondary);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 30px;
-            font-size: 1rem;
-            margin-top: 25px;
-            transition: all 0.3s;
+        /* CTA button for scientists page */
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            padding: 15px 30px;
+            border-radius: 50px;
             font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
+            font-weight: 700;
+            font-size: 1.15rem;
             text-decoration: none;
-            box-shadow: 0 4px 15px rgba(62, 109, 156, 0.3);
-        }
-
-        .doi-badge:hover {
-            background: var(--primary);
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(62, 109, 156, 0.4);
-        }
-
-        .doi-badge i {
-            margin-right: 8px;
-        }
-
-        .key-features {
-            padding-left: 30px;
-            margin: 30px 0;
-        }
-
-        .key-features li {
-            margin-bottom: 20px;
-            font-size: 1.2rem;
-            position: relative;
-            padding-left: 35px;
-            line-height: 1.7;
-        }
-
-        .key-features li::before {
-            content: "";
-            position: absolute;
-            left: 0;
-            top: 10px;
-            width: 18px;
-            height: 18px;
-            background: var(--gold);
-            border-radius: 50%;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-            margin: 40px 0;
-        }
-
-        .feature-card {
-            background: white;
-            border-radius: 14px;
-            padding: 30px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
             transition: all 0.4s ease;
-            border: 1px solid rgba(0,0,0,0.05);
-            position: relative;
-            overflow: hidden;
+            background: linear-gradient(135deg, var(--secondary), #345c88);
+            color: white;
+            border: none;
+            box-shadow: 0 8px 25px rgba(62, 109, 156, 0.4);
+            margin-top: 30px;
+            margin-bottom: 20px;
+            text-align: center;
         }
 
-        .feature-card::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 5px;
-            height: 100%;
-            background: linear-gradient(to bottom, var(--gold), var(--accent));
+        .cta-button:hover {
+            background: linear-gradient(135deg, var(--primary), #2a3d54);
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 12px 30px rgba(62, 109, 156, 0.6);
         }
 
-        .feature-card:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+        .cta-button i {
+            margin-left: 10px;
+            font-size: 1.3rem;
         }
 
-        .feature-title {
+        /* Glossaire Section */
+        .glossary-section {
+            background: var(--gray-light);
+            border-radius: 16px;
+            padding: 40px;
+            margin-top: 50px;
+            box-shadow: inset 0 0 15px rgba(0,0,0,0.05);
+            border-left: 5px solid var(--accent);
+        }
+
+        .glossary-section h2 {
             font-family: 'Montserrat', sans-serif;
             color: var(--primary);
-            font-size: 1.5rem;
-            margin-bottom: 20px;
+            font-size: 2rem;
+            margin-bottom: 25px;
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 15px;
             display: flex;
             align-items: center;
-            padding-left: 10px;
         }
 
-        .feature-title i {
+        .glossary-section h2 i {
+            margin-right: 15px;
+            color: var(--accent);
+        }
+
+        .glossary-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .glossary-list dt {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            color: var(--secondary);
+            font-size: 1.25rem;
+            margin-top: 25px;
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .glossary-list dt::before {
+            content: "•";
+            position: absolute;
+            left: 0;
             color: var(--gold);
-            margin-right: 12px;
-            font-size: 1.4rem;
+            font-size: 1.5rem;
+            top: -2px;
         }
 
-        .feature-content {
-            font-size: 1.15rem;
-            padding-left: 10px;
+        .glossary-list dd {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-left: 25px;
+            margin-bottom: 15px;
+            color: var(--dark);
         }
+
 
         /* --- Social Icons --- */
         .social-container {
@@ -417,7 +440,7 @@
         .social-link:hover {
             color: white;
             transform: scale(1.15) rotate(5deg);
-            opacity: 0.9; /* Added a slight opacity change for hover */
+            opacity: 0.9;
         }
 
         .social-link:hover::before {
@@ -497,9 +520,12 @@
             .hero-title {
                 font-size: 2.8rem;
             }
-            
+
             .hero-subtitle {
                 font-size: 1.4rem;
+            }
+            .section-title {
+                font-size: 1.8rem;
             }
         }
 
@@ -507,56 +533,74 @@
             body {
                 padding-top: 140px;
             }
-            
+
             header {
                 flex-direction: column;
                 padding: 15px;
             }
-            
+
             .site-title {
                 margin-bottom: 15px;
                 font-size: 1.4rem;
             }
-            
+
             .main-nav {
                 width: 100%;
                 justify-content: center;
                 gap: 10px;
                 flex-wrap: wrap;
             }
-            
+
             .nav-link {
                 font-size: 0.9rem;
                 padding: 6px 12px;
             }
-            
+
             .container {
                 padding: 20px;
             }
-            
+
             .hero-title {
                 font-size: 2.2rem;
                 padding-bottom: 20px;
             }
-            
+
             .hero-subtitle {
                 font-size: 1.2rem;
             }
-            
-            .research-card {
+
+            .content-section {
                 padding: 25px;
             }
-            
+            .section-title {
+                font-size: 1.6rem;
+                padding-left: 30px;
+            }
+            .section-title::before {
+                width: 20px;
+            }
+            .section-content p, .section-content .equation {
+                font-size: 1rem;
+            }
+
             .social-link {
                 font-size: 2.2rem;
                 width: 65px;
                 height: 65px;
             }
-            
+
             .footer-btn {
                 min-width: 200px;
                 font-size: 1rem;
                 padding: 10px 20px;
+            }
+            .glossary-list dt {
+                font-size: 1.1rem;
+                padding-left: 20px;
+            }
+            .glossary-list dd {
+                font-size: 0.95rem;
+                margin-left: 20px;
             }
         }
 
@@ -564,15 +608,11 @@
             .hero-title {
                 font-size: 1.9rem;
             }
-            
-            .card-title {
-                font-size: 1.6rem;
+
+            .section-title {
+                font-size: 1.4rem;
             }
-            
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
-            
+
             .footer-btn {
                 width: 100%;
                 max-width: 300px;
@@ -582,14 +622,14 @@
 </head>
 <body>
     <header>
-        <a href="#" class="site-title"><i class="fas fa-atom"></i>Sylvain Herbin</a>
+        <a href="index.html" class="site-title"><i class="fas fa-atom"></i>Sylvain Herbin</a>
         <nav class="main-nav">
-            <a href="https://doi.org/10.5281/zenodo.15973540" class="nav-link active" target="_blank">
+            <a href="index.html" class="nav-link active"><i class="fas fa-home"></i> Home</a>
+            <a href="scientists/scientists.html" class="nav-link"><i class="fas fa-flask"></i> For Scientists</a>
+            <a href="https://doi.org/10.5281/zenodo.15973540" class="nav-link" target="_blank">
                 <i class="fas fa-file-alt"></i> Full Paper
             </a>
-            <a href="explainer/" class="nav-link"><i class="fas fa-microscope"></i> Science Explainers</a>
-            <a href="#" class="nav-link"><i class="fas fa-home"></i> Home</a>
-        </nav>
+            </nav>
     </header>
 
     <main class="container">
@@ -598,98 +638,76 @@
             <div class="hero-subtitle">A Fibonacci Phase Transition Model for the Universe</div>
             <div class="hero-divider"></div>
         </div>
-        
-        <div class="research-card">
-            <h2 class="card-title">Research Abstract</h2>
-            <div class="math-container">
-                <p>We present a complete fractal cosmological framework where the golden ratio $\phi$ evolves dynamically from primordial ($\phi_0=1.5$) to modern ($\phi_\infty=1.618$) epochs. This phase transition, characterized by a **rate parameter $\mathbf{\Gamma=0.23\pm0.01}$**, explains CMB anomalies through scale-dependent fractal dimensions and offers a compelling resolution to the Hubble tension. **Leveraging Pantheon+ Type Ia supernova data, our model yields a best-fit Hubble constant of $\mathbf{H_0=72.82 \pm 0.16 \text{ km/s/Mpc}}$, along with $\mathbf{\Omega_m=0.270\pm0.065}$ and an absolute magnitude $\mathbf{M=-19.38\pm0.16 \text{ mag}}$, demonstrating an excellent fit with $\mathbf{\chi^2/\text{dof}=0.61}$.** The model predicts:</p>
-                
-                <p>(1) BAO deviations $\Delta r_d/r_d \approx 0.15(1-e^{-z/2})$</p>
-                <p>(2) CMB power deficit $\mathcal{S}=0.93\pm0.02$ at $\ell<30$ ($\chi^2/\text{dof}=1.72$ vs $5.40$ for static fractal model with $\phi=1.5$ constant using Planck 2018 TT+lowE)</p>
-                <p>(3) Redshift-dependent growth $f(z)=\Omega_m(z)^{\phi(z)/2}$</p>
-                
-                <a href="https://doi.org/10.5281/zenodo.15973540" class="doi-badge" target="_blank">
-                    <i class="ai ai-doi"></i> DOI: 10.5281/zenodo.15973540
+
+        <div class="content-section">
+            <h2 class="section-title">Beyond the Standard Model: Unveiling a Fractal Universe</h2>
+            <div class="section-content">
+                <p>Have you ever wondered about the true nature of our universe? For decades, the $\Lambda$CDM model has been our best description, but recent observations have revealed puzzling discrepancies, hinting that there might be more to the cosmic story. What if the very fabric of space isn't as smooth as we thought, but holds a hidden, evolving fractal dimension?</p>
+
+                <p>Introducing **Dynamic Fractal Cosmology**, a groundbreaking new model that proposes a universe where the golden ratio, $\phi$ (Phi), isn't just a mathematical curiosity, but a fundamental property that evolves over cosmic time. This innovative approach offers elegant solutions to some of cosmology's most pressing mysteries: the **Hubble Tension**, which highlights a disagreement in the universe's expansion rate, and puzzling **anomalies in the Cosmic Microwave Background (CMB)**, the faint echo of the Big Bang.</p>
+
+                <img src="figures/fractal_cosmology.JPG" alt="The Evolving Cosmic Tapestry: A visual representation of Dynamic Fractal Cosmology showing the evolution of the golden ratio Phi influencing the fractal structure of the universe and resolving cosmic tensions." class="main-visual">
+
+                <p>Our research leverages a vast array of cosmic data—from distant exploding stars (supernovae) and the large-scale distribution of galaxies to the ancient light of the CMB. By analyzing these cosmic signals with our dynamic fractal framework, we've achieved an unprecedented fit to the observational evidence, providing a cohesive picture from the early universe's first moments to today. This model suggests that the universe's fractal nature, driven by the evolution of $\phi(z)$, influences everything from how galaxies cluster to the precise rate of cosmic expansion. It's a universe that truly evolves, revealing its intricate structure over billions of years.</p>
+
+                <p>At its heart, our model describes how the universe's inherent "golden ratio" property shifts and changes as it expands:</p>
+
+                <div class="equation">
+                    $$\text{Universe Evolution} = \text{Fractal Geometry} + \text{Cosmic Expansion}$$
+                </div>
+
+                <p>This simple equation encapsulates a profound new understanding: that the universe isn't static in its underlying properties, but dynamically unfolds its fractal complexity, offering a fresh perspective on its past, present, and future.</p>
+
+                <a href="scientists/scientists.html" class="cta-button">
+                    For Scientists: Dive Deeper into the Model <i class="fas fa-arrow-right"></i>
                 </a>
             </div>
         </div>
 
-        <div class="research-card">
-            <h2 class="card-title">Key Features & Insights</h2>
-            <ul class="key-features">
-                <li><strong>Dynamic Golden Ratio ($\phi$) Evolution:</strong> Introduces a phase transition for $\phi$ from a primordial value of 1.5 to its modern value of 1.618, driven by cosmic expansion, with a transition rate of $\mathbf{\Gamma=0.23\pm0.01}$.</li>
-                <li><strong>Hubble Tension Resolution:</strong> The model naturally resolves the H0 tension with a best-fit $\mathbf{H_0 = 72.82 \text{ km/s/Mpc}}$ from Pantheon+ SNIa data, providing a consistent expansion history across different observational probes.</li>
-                <li><strong>CMB Anomaly Explanation:</strong> Explains the observed CMB power deficit at large angular scales ($\ell < 30$) through scale-dependent fractal dimensions.</li>
-                <li><strong>Predictive Power for BAO:</strong> Foresees specific deviations in the Baryon Acoustic Oscillation (BAO) scale: $\Delta r_d/r_d \approx 0.15(1-e^{-z/2})$.</li>
-                <li><strong>Excellent Data Fit:</strong> Demonstrates an excellent fit to Pantheon+ Supernovae Type Ia data ($\chi^2/\text{dof}=0.61$). Also achieves a significantly better fit to Planck 2018 TT+lowE data ($\chi^2/\text{dof} = 1.72$) compared to static fractal models ($\chi^2/\text{dof} = 5.40$).</li>
-            </ul>
-            
-            <div class="features-grid">
-                <div class="feature-card">
-                    <h3 class="feature-title"><i class="fas fa-chart-line"></i> Evolution of Fractal Dimension</h3>
-                    <div class="feature-content">
-                        <p>FIG. 1. Evolution of the fractal dimension $\phi(z)$ showing transition between primordial ($\phi_0 = 1.5$) and modern ($\phi_\infty = 1.618$) values, with a transition rate of $\Gamma=0.23\pm0.01$ (derived from SNIa data).</p>
-                    </div>
-                </div>
-                
-                <div class="feature-card">
-                    <h3 class="feature-title"><i class="fas fa-infinity"></i> Fibonacci Convergence</h3>
-                    <div class="feature-content">
-                        <p>FIG. 2. Convergence of Fibonacci ratios toward $\phi$. The primordial value $\phi_0 = 1.5$ ($F_4/F_3$) marks the onset of fractal dimensionality.</p>
-                    </div>
-                </div>
-                
-                <div class="feature-card">
-                    <h3 class="feature-title"><i class="fas fa-meteor"></i> CMB Spectrum Analysis</h3>
-                    <div class="feature-content">
-                        <p>FIG. 3. CMB spectrum showing fractal corrections at $\ell < 30$ (blue band) compared to $\Lambda$CDM (dashed line). Data points from Planck 2018.</p>
-                    </div>
-                </div>
+        <div class="glossary-section">
+            <h2 class="section-title"><i class="fas fa-book"></i> Key Concepts & Glossary</h2>
+            <dl class="glossary-list">
+                <dt>The Golden Ratio ($\phi$)</dt>
+                <dd>An irrational number approximately equal to 1.618, often found in nature and art, where the ratio of two quantities is the same as the ratio of their sum to the larger of the two quantities. In our model, it represents a fundamental, evolving dimension of the universe's structure.</dd>
 
-                <div class="feature-card">
-                    <h3 class="feature-title"><i class="fas fa-ruler-combined"></i> Hubble Constant Measurements</h3>
-                    <div class="feature-content">
-                        <p>FIG. 4. Hubble constant measurements with $1\sigma$ errors: Planck (CMB), Freedman et al. (TRGB), and Riess et al. (SNIa). The dashed line shows our Dynamic Fractal Model's best-fit prediction ($H_0 = 72.82 \text{ km/s/Mpc}$).</p>
-                    </div>
-                </div>
+                <dt>Hubble Tension</dt>
+                <dd>A significant disagreement between measurements of the universe's expansion rate ($H_0$) derived from early-universe data (like the CMB) and those from the late, local universe (like supernovae). Our model offers a solution to this puzzling discrepancy.</dd>
 
-                <div class="feature-card">
-                    <h3 class="feature-title"><i class="fas fa-chart-bar"></i> Hubble Diagram Comparison</h3>
-                    <div class="feature-content">
-                        <p>FIG. 5. Hubble Diagram showing the distance modulus (m-M) vs redshift (z). Synthesized SNIa data (gray) are compared with the best-fit Dynamic Fractal Model (red solid line) and the standard $\Lambda$CDM model (blue dashed line). This highlights the superior fit of our model to supernova data.</p>
-                    </div>
-                </div>
+                <dt>Cosmic Microwave Background (CMB)</dt>
+                <dd>The oldest light in the universe, an echo of the Big Bang, providing a snapshot of the universe when it was only about 380,000 years old. Anomalies observed in its large-scale patterns are addressed by Dynamic Fractal Cosmology.</dd>
 
-                <div class="feature-card">
-                    <h3 class="feature-title"><i class="fas fa-rocket"></i> H(z) Evolution Comparison</h3>
-                    <div class="feature-content">
-                        <p>FIG. 6. Evolution of the relative Hubble parameter, $H(z)/H_0$, vs redshift (z) for the Dynamic Fractal Model (red solid line) and $\Lambda$CDM (blue dashed line). Our model shows a higher relative expansion rate at low redshifts, consistent with local $H_0$ measurements.</p>
-                    </div>
-                </div>
+                <dt>$\Lambda$CDM Model</dt>
+                <dd>The standard model of cosmology, which describes the universe as being composed of dark energy ($\Lambda$), cold dark matter (CDM), and ordinary matter. While successful, it faces challenges like the Hubble Tension and CMB anomalies that our model aims to resolve.</dd>
 
-                <div class="feature-card">
-                    <h3 class="feature-title"><i class="fas fa-atom"></i> Energy Densities & Transition</h3>
-                    <div class="feature-content">
-                        <p>FIG. 7. Evolution of relative energy densities for the Dynamic Fractal cosmological model (dashed lines) and the standard $\Lambda$CDM model (solid lines) as a function of redshift $z$. The shaded band highlights the region where the transition of the fractal dimension $\phi(z)$ is most significant, showing the impact on relative densities.</p>
-                    </div>
-                </div>
-            </div>
+                <dt>Fractal Dimension</dt>
+                <dd>A statistical quantity that describes how completely a fractal pattern or structure fills space as its scale changes. In our model, the universe's fractal dimension ($\phi(z)$) is not constant but evolves with cosmic expansion.</dd>
+
+                <dt>Redshift ($z$)</dt>
+                <dd>A measure of how much the light from a distant object has been "stretched" by the expansion of the universe. Higher redshift means greater distance and further back in cosmic time.</dd>
+
+                <dt>Supernovae Type Ia</dt>
+                <dd>Exploding stars of a specific type that have a consistent peak luminosity, making them "standard candles" for measuring cosmic distances and the universe's expansion rate.</dd>
+
+                <dt>Galaxy Clusters Mass Functions</dt>
+                <dd>A measurement of the number of galaxy clusters per unit volume at different masses and redshifts. Our model can explain the observed deficit of massive clusters at certain redshifts, which is a challenge for the standard model.</dd>
+
+            </dl>
         </div>
 
         <div class="social-container">
-            <a href="https://orcid.org/0009-0001-3390-5012" class="social-link" title="ORCID">
+            <a href="https://orcid.org/0009-0001-3390-5012" class="social-link" title="ORCID" target="_blank">
                 <i class="fab fa-orcid"></i>
             </a>
-            <a href="https://doi.org/10.5281/zenodo.15973540" class="social-link" title="Zenodo">
+            <a href="https://doi.org/10.5281/zenodo.15973540" class="social-link" title="Zenodo" target="_blank">
                 <i class="ai ai-zenodo"></i>
             </a>
-            <a href="https://x.com/sylvainherbin2b" class="social-link" title="Twitter">
+            <a href="https://x.com/sylvainherbin2b" class="social-link" title="Twitter" target="_blank">
                 <i class="fab fa-twitter"></i>
             </a>
-            <a href="mailto:herbinsylvain@protonmail.com" class="social-link" title="Email">
+            <a href="mailto:herbinsylvain@protonmail.com" class="social-link" title="Email" target="_blank">
                 <i class="fas fa-envelope"></i>
             </a>
-            <a href="https://github.com/sylvainherbin/Cosmology" class="social-link" title="GitHub">
+            <a href="https://github.com/sylvainherbin/Cosmology" class="social-link" title="GitHub" target="_blank">
                 <i class="fab fa-github"></i>
             </a>
         </div>
@@ -701,7 +719,7 @@
                 <a href="https://doi.org/10.5281/zenodo.15973540" class="footer-btn doi-link" target="_blank">
                     <i class="fas fa-file-alt"></i> View Full Paper
                 </a>
-                <a href="explainer/" class="footer-btn"><i class="fas fa-microscope"></i> Science Explainers</a>
+                <a href="scientists/scientists.html" class="footer-btn"><i class="fas fa-flask"></i> For Scientists</a>
                 <a href="https://doi.org/10.5281/zenodo.15973540" class="footer-btn doi-link" target="_blank">
                     <i class="ai ai-doi"></i> View on Zenodo
                 </a>
